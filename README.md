@@ -1,5 +1,7 @@
 # DeepInfra Models Monitor
 
+[![CodeFactor](https://www.codefactor.io/repository/github/amiralimollaei/deepinfra-models/badge)](https://www.codefactor.io/repository/github/amiralimollaei/deepinfra-models)
+
 This project is designed to monitor price changes, additions, removals, quantization changes, and deprecations of models available on DeepInfra. It helps users stay up-to-date with the latest changes in the DeepInfra model catalog.
 
 ## Features
