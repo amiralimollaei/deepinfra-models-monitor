@@ -204,7 +204,9 @@ def fetch_models() -> set[DeepinfraModelPriced]:
 
 
 def save_models_to_file(models: set[DeepinfraModelPriced] | list[DeepinfraModelPriced], filename: str) -> None:
-    models_serialized = [asdict(model) for model in models]
+    # sort models for consistent output
+    sorted_models = sorted(models, key=lambda m: m.name)
+    models_serialized = [asdict(model) for model in sorted_models]
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(models_serialized, f, ensure_ascii=False, indent=2)
 
@@ -223,7 +225,7 @@ def load_models_from_file(filename: str) -> set[DeepinfraModelPriced]:
 
 
 if __name__ == "__main__":
-    # Example usage of the list_models function
+    # Example usage of the fetch_models function
 
     models_set = fetch_models()
 

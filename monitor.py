@@ -29,5 +29,4 @@ if __name__ == "__main__":
     else:
         print(f"Cache file does not exist: {cache_file_path}")
         print("Pricing is updated, saving models to file.")
-        sorted_models = sorted(models, key=lambda m: m.name)
-        save_models_to_file(sorted_models, cache_file_path)
+        save_models_to_file(models, cache_file_path)
