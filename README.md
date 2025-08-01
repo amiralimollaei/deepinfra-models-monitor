@@ -24,7 +24,7 @@ The script operates in a simple, robust cycle:
 2.  **Normalize:** It intelligently normalizes prices to ensure accurate comparisons. For example, a change from `$1 per 1024x1024 image` to `$1 per 512x512 image` is correctly identified as a 4x price increase, even though the dollar amount is the same.
 3.  **Generate Snapshot:** It calculates an order-independent hash of the entire normalized model catalog. This hash represents the unique state of the catalog at a specific point in time.
 4.  **Detect & Compare:**
-    - It saves the current snapshot to a new file in the `cache/` directory, named `{hash}.json`.
+    - It saves the current snapshot to a new file in the `cache/` directory, named `models_{hash}.json`.
     - If this file hash is new, it signifies that a change has occurred.
     - The script then implements basic functionality to perform a diff against any two cached states to identify and report the specific changes.
 
