@@ -1,5 +1,5 @@
 # DeepInfra Models Monitor
-[![CodeFactor](https://www.codefactor.io/repository/github/amiralimollaei/deepinfra-models/badge)](https://www.codefactor.io/repository/github/amiralimollaei/deepinfra-models)
+[![CodeFactor](https://www.codefactor.io/repository/github/amiralimollaei/deepinfra-models-monitor/badge)](https://www.codefactor.io/repository/github/amiralimollaei/deepinfra-models-monitor)
 
 A lightweight, un-opinionated utility for detecting and logging model and pricing changes on the DeepInfra platform.
 
