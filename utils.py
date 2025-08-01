@@ -1,3 +1,4 @@
+import time
 from typing import Optional
 from dataclasses import dataclass, asdict
 from enum import StrEnum
@@ -206,23 +207,39 @@ def fetch_models() -> set[DeepinfraModelPriced]:
 def save_models_to_file(models: set[DeepinfraModelPriced] | list[DeepinfraModelPriced], filename: str) -> None:
     # sort models for consistent output
     sorted_models = sorted(models, key=lambda m: m.name)
-    models_serialized = [asdict(model) for model in sorted_models]
+    models_serialized = dict(
+        models = [asdict(model) for model in sorted_models],
+        timestamp = time.time()
+    )
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(models_serialized, f, ensure_ascii=False, indent=2)
 
 
-def load_models_from_file(filename: str) -> set[DeepinfraModelPriced]:
+def load_models_from_file(filename: str, return_timestap: bool = False) -> set[DeepinfraModelPriced] | tuple[set[DeepinfraModelPriced], float]:
     with open(filename, "r", encoding="utf-8") as f:
         models_loaded = json.load(f)
+        # handle laoding the old save format
+        if isinstance(models_loaded, list):
+            models_loaded = dict(models = models_loaded)
         models_set_loaded = set()
-        for model_kwargs in models_loaded:
+        for model_kwargs in models_loaded["models"]:
             # deserialize pricing
             pricing = DeepinfraModelPricing(**model_kwargs["pricing"])
             model_kwargs["pricing"] = pricing
             # deserialize DeepinfraModel
             models_set_loaded.add(DeepinfraModelPriced(**model_kwargs))
+    timestamp = models_loaded.get("timestamp")
+    if return_timestap:
+        return models_set_loaded, timestamp
     return models_set_loaded
 
+def load_timestamp_from_file(filename: str) -> float | None:
+    with open(filename, "r", encoding="utf-8") as f:
+        models_loaded = json.load(f)
+        # handle laoding the old save format
+        if isinstance(models_loaded, list):
+            models_loaded = dict(models = models_loaded)
+    return models_loaded.get("timestamp")
 
 if __name__ == "__main__":
     # Example usage of the fetch_models function

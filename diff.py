@@ -3,8 +3,7 @@ import argparse
 from pathlib import Path
 from typing import List, Dict, Set
 
-# Assuming your dataclasses and load_models_from_file are in a utils.py file
-# Add the project root to the path to allow a direct run of `python diff.py`
+# Add the project root to the path to allow a direct run
 sys.path.append(str(Path(__file__).parent))
 from utils import load_models_from_file, DeepinfraModelPriced
 

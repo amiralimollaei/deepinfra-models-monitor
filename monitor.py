@@ -1,7 +1,12 @@
 from dataclasses import asdict
+import sys
+from pathlib import Path
 import os
 import hashlib
-from utils import DeepinfraModelPriced, fetch_models, save_models_to_file, load_models_from_file
+
+# Add the project root to the path to allow a direct run
+sys.path.append(str(Path(__file__).parent))
+from utils import DeepinfraModelPriced, fetch_models, save_models_to_file
 
 CACHE_DIR = os.path.abspath("cache")
 
