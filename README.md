@@ -49,7 +49,7 @@ The script operates in a simple, robust cycle:
 ### Usage
 
 The primary entry point is `monitor.py`.
-You need to first modify the file and specify the two cached states for it to identify and report the specific changes.
+It is meant to run periodically in the background.
 
 ```bash
 python monitor.py
