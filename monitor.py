@@ -8,7 +8,7 @@ import hashlib
 sys.path.append(str(Path(__file__).parent))
 from utils import DeepinfraModelPriced, fetch_models, save_models_to_file
 
-CACHE_DIR = os.path.abspath("cache")
+CACHE_DIR = Path(os.path.join(str(Path(__file__).parent), "cache"))
 
 
 def create_order_independent_hash(models: set[DeepinfraModelPriced]) -> str:
