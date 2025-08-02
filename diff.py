@@ -65,13 +65,16 @@ def main():
     if not available_hashes:
         print("No cache files found in `cache/`. Run `monitor.py` first.")
         sys.exit(1)
-
-    hash_timestamps = list(map(load_timestamp_from_file, map(
-        lambda x: os.path.join(CACHE_DIR, f"models_{x}.json"), available_hashes)))
     
-    available_hashes = ''.join(
-        map(lambda x: f"\n\t{x[0]} {f"- {time.strftime("%a %b %d %H:%M:%S %Y", time.gmtime(x[1]))}" if x[1] else ""}", zip(available_hashes, hash_timestamps))
-    )
+    available_hashes_list = []
+    for _hash in available_hashes:
+        hash_timestamp = load_timestamp_from_file(os.path.join(CACHE_DIR, f"models_{_hash}.json"))
+        available_hash_str = f"{_hash}"
+        if hash_timestamp:
+            available_hash_str += " - " + time.strftime("%a %b %d %H:%M:%S %Y", time.gmtime(hash_timestamp))
+        available_hashes_list.append("\n\t" + available_hash_str)
+        
+    available_hashes = ''.join(available_hashes_list)
 
     parser = argparse.ArgumentParser(
         description=f"Compare two DeepInfra model snapshots from the cache. \nAvailable: {available_hashes}",
