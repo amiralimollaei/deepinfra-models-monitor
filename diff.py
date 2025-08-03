@@ -67,29 +67,29 @@ def compare_models(old: DeepinfraModelPriced, new: DeepinfraModelPriced) -> List
 
     # Compare pricing
     if old.pricing.type != new.pricing.type:
-        changes.append(f"{RED}  - type: {old.pricing.type}{RESET}")
-        changes.append(f"{GREEN}  + type: {new.pricing.type}{RESET}")
+        changes.append(f"{RED}  - Pricing Type: {old.pricing.type}{RESET}")
+        changes.append(f"{GREEN}  + Pricing Type: {new.pricing.type}{RESET}")
 
     if old.pricing.normalized_input_price != new.pricing.normalized_input_price:
-        changes.append(f"{RED}  - normalized_input_price: {format_pricing(old.pricing.type, old.pricing.normalized_input_price)}{RESET}")
-        changes.append(f"{GREEN}  + normalized_input_price: {format_pricing(new.pricing.type, new.pricing.normalized_input_price)}{RESET}")
+        changes.append(f"{RED}  - Input Price: {format_pricing(old.pricing.type, old.pricing.normalized_input_price)}{RESET}")
+        changes.append(f"{GREEN}  + Input Price: {format_pricing(new.pricing.type, new.pricing.normalized_input_price)}{RESET}")
 
     if old.pricing.normalized_output_price != new.pricing.normalized_output_price:
-        changes.append(f"{RED}  - normalized_output_price: {format_pricing(old.pricing.type, old.pricing.normalized_output_price)}{RESET}")
-        changes.append(f"{GREEN}  + normalized_output_price: {format_pricing(new.pricing.type, new.pricing.normalized_output_price)}{RESET}")
+        changes.append(f"{RED}  - Output Price: {format_pricing(old.pricing.type, old.pricing.normalized_output_price)}{RESET}")
+        changes.append(f"{GREEN}  + Output Price: {format_pricing(new.pricing.type, new.pricing.normalized_output_price)}{RESET}")
 
     # Compare other attributes
     if old.quantization != new.quantization:
-        changes.append(f"{RED}  - quantization: {format_quantization(old.quantization)}{RESET}")
-        changes.append(f"{GREEN}  + quantization: {format_quantization(new.quantization)}{RESET}")
+        changes.append(f"{RED}  - Quantization: {format_quantization(old.quantization)}{RESET}")
+        changes.append(f"{GREEN}  + Quantization: {format_quantization(new.quantization)}{RESET}")
 
     if old.deprecated != new.deprecated:
-        changes.append(f"{RED}  - deprecated (timestamp): {format_timestamp(old.deprecated)}{RESET}")
-        changes.append(f"{GREEN}  + deprecated (timestamp): {format_timestamp(new.deprecated)}{RESET}")
+        changes.append(f"{RED}  - Deprecated (timestamp): {format_timestamp(old.deprecated)}{RESET}")
+        changes.append(f"{GREEN}  + Deprecated (timestamp): {format_timestamp(new.deprecated)}{RESET}")
 
     if old.replaced_by != new.replaced_by:
-        changes.append(f"{RED}  - replaced_by: {old.replaced_by}{RESET}")
-        changes.append(f"{GREEN}  + replaced_by: {new.replaced_by}{RESET}")
+        changes.append(f"{RED}  - Replaced by: {old.replaced_by}{RESET}")
+        changes.append(f"{GREEN}  + Replaced by: {new.replaced_by}{RESET}")
 
     return changes
 
