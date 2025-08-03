@@ -1,4 +1,5 @@
 from dataclasses import asdict
+import json
 import time
 import sys
 import os
@@ -19,6 +20,9 @@ YELLOW = "\033[93m"
 BLUE = "\033[94m"
 RESET = "\033[0m"
 
+def print_json(**kwargs):
+    """Prints data in JSON format."""
+    print(json.dumps(kwargs, ensure_ascii=False))
 
 def find_cache_files() -> List[str]:
     """Finds all cache files and returns their hashes."""
@@ -130,31 +134,31 @@ def parse_args():
     return args
 
 def diff_modified_models(should_output_json, name, old_model, new_model):
-    # Use a special tag for deprecation events
     if should_output_json:
-        modified_details = dict()
+        modified_details = dict() # only contain modified fields
         if old_model.deprecated != new_model.deprecated:
-            modified_details["deprecated"] = {
-                    "old": old_model.deprecated,
-                    "new": new_model.deprecated
-                }
+            modified_details["deprecated"] = dict(
+                old=old_model.deprecated,
+                new=new_model.deprecated
+            )
         if old_model.replaced_by != new_model.replaced_by:
-            modified_details["replaced_by"] = {
-                    "old": old_model.replaced_by,
-                    "new": new_model.replaced_by
-                }
+            modified_details["replaced_by"] = dict(
+                old=old_model.replaced_by,
+                new=new_model.replaced_by
+            )
         if old_model.quantization != new_model.quantization:
-            modified_details["quantization"] = {
-                    "old": old_model.quantization,
-                    "new": new_model.quantization
-                }
+            modified_details["quantization"] = dict(
+                old=old_model.quantization,
+                new=new_model.quantization
+            )
         if old_model.pricing != new_model.pricing:
-            modified_details["pricing"] = {
-                    "old": old_model.pricing,
-                    "new": new_model.pricing,
-                }
-        print(f'{{"event": "modified", "model": "{name}", "details": {modified_details}}}')
+            modified_details["pricing"] = dict(
+                old=old_model.pricing,
+                new=new_model.pricing,
+            )
+        print_json(event="modified", model=name, details=modified_details)
     else:
+        # Use a special tag for deprecation events in plain text output
         if old_model.deprecated == 0 and new_model.deprecated > 0:
             print(f"{YELLOW}[DEPRECATED] Model: '{name}'{RESET}")
         else:
@@ -206,7 +210,7 @@ def main():
         changes_found = True
         model = models_new[name]
         if should_output_json:
-            print(f'{{"event": "added", "model": "{name}", "details": {asdict(model)}}}')
+            print_json(event="added", model=name, details=asdict(model))
         else:
             print(f"{BLUE}[ADDED] Model: '{name}'{RESET}")
             print(f"{GREEN}  + {model}{RESET}")
@@ -216,7 +220,7 @@ def main():
         changes_found = True
         model = models_old[name]
         if should_output_json:
-            print(f'{{"event": "removed", "model": "{name}"}}')
+            print_json(event="removed", model=name)
         else:
             print(f"{BLUE}[REMOVED] Model: '{name}'{RESET}")
             print(f"{RED}  - {model}{RESET}")
