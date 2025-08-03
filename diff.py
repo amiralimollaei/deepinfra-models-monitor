@@ -231,8 +231,7 @@ def main():
 
     if not changes_found:
         print("No differences found between the two snapshots.")
-    else:
-        print("---")
+    print("---")
 
 
 if __name__ == "__main__":
