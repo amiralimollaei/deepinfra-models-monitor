@@ -29,7 +29,6 @@ def find_cache_files() -> List[str]:
 
 def format_pricing(type: DeepinfraModelPricingType, value: float) -> str:
     """Formats a pricing value based on its type."""
-    assert type in DeepinfraModelPricingType, f"Invalid pricing type: {type}"
 
     unit = None
     match type:
