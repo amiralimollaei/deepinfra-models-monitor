@@ -39,7 +39,7 @@ def format_pricing(type: DeepinfraModelPricingType, value: float) -> str:
         case DeepinfraModelPricingType.INPUT_CHARACTER_LENGTH | DeepinfraModelPricingType.OUTPUT_CHARACTER_LENGTH:
             unit = "1M characters"
         case DeepinfraModelPricingType.INPUT_LENGTH | DeepinfraModelPricingType.OUTPUT_LENGTH:
-            unit = "audio seconds"
+            unit = "audio minutes"
         case DeepinfraModelPricingType.IMAGE_UNITS:
             unit = "1024x1024 image itereation"
         case _:
