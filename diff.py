@@ -133,8 +133,12 @@ def main():
 
     hash1, hash2 = args.hash1, args.hash2
     
+    print(f"\nComparing states: {YELLOW}{hash1}{RESET} -> {YELLOW}{hash2}{RESET}")
+    print("---")
+    
     if hash1 == hash2:
         print("same hashes provided. No comparison needed.")
+        print("---")
         sys.exit(0)
 
     try:
@@ -149,9 +153,6 @@ def main():
     models_new: Dict[str, DeepinfraModelPriced] = {m.name: m for m in models_new_set}
 
     # --- --- --- --- ---
-
-    print(f"\nComparing states: {YELLOW}{hash1}{RESET} -> {YELLOW}{hash2}{RESET}")
-    print("---")
 
     old_names: Set[str] = set(models_old.keys())
     new_names: Set[str] = set(models_new.keys())
