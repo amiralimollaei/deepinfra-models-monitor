@@ -46,7 +46,7 @@ def format_pricing(type: DeepinfraModelPricingType, value: float) -> str:
             raise ValueError(f"Unsupported pricing type: {type}")
     
     if value is None:
-        return "0.00000"
+        return f"0.00000 per {unit}"
     return f"${value/100:.5f} per {unit}"
 
 def format_timestamp(value: float) -> str:
