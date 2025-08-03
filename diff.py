@@ -198,7 +198,11 @@ def main():
             # Use a special tag for deprecation events
             if old_model.deprecated == 0 and new_model.deprecated > 0:
                 if should_output_json:
-                    print(f'{{"event": "deprecated", "model": "{name}", "details": {asdict(new_model)}}}')
+                    deprecated_details = dict(
+                        deprecated=new_model.deprecated,
+                        replaced_by=new_model.replaced_by
+                    )
+                    print(f'{{"event": "deprecated", "model": "{name}", "details": {deprecated_details}}}')
                 else:
                     print(f"{YELLOW}[DEPRECATED] Model: '{name}'{RESET}")
             else:
