@@ -258,25 +258,3 @@ def load_timestamp_from_file(filename: str) -> float | None:
         if isinstance(models_loaded, list):
             models_loaded = dict(models=models_loaded)
     return models_loaded.get("timestamp")
-
-
-if __name__ == "__main__":
-    # Example usage of the fetch_models function
-
-    models_set = fetch_models()
-
-    print(f"Fetched {len(models_set)} models:")
-    models_serialized = []
-    for model in models_set:
-        print(model)
-        models_serialized.append(asdict(model))
-
-    # test serialization and deserialization
-
-    save_models_to_file(models_set, "models.json")
-    print("Models saved to models.json")
-
-    models_set_loaded = load_models_from_file("models.json")
-    print(f"Loaded {len(models_set_loaded)} models from file.")
-
-    assert models_set == models_set_loaded, "Models loaded from file do not match the original set"
