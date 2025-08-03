@@ -105,7 +105,7 @@ class DeepinfraModelPricingType(StrEnum):
 
 
 @dataclass(frozen=True)
-class DeepinfraImageUnitDefaults:
+class DeepinfraImageUnitSpecs:
     width: float
     height: float
     iterations: float
@@ -135,6 +135,47 @@ class DeepinfraModelPriced:
     quantization: Optional[str] = None  # e.g. "fp16", "int8", etc.
 
 
+def normalize_price(
+    pricing_type: DeepinfraModelPricingType,
+    input_price: float | None = None,
+    output_price: float | None = None,
+    image_unit_specs: DeepinfraImageUnitSpecs | None = None
+):
+    normalized_input_price = input_price
+    normalized_output_price = output_price
+    match pricing_type:
+        case DeepinfraModelPricingType.IMAGE_UNITS:
+            assert input_price is not None, "Input price must be specified for image units pricing type"
+            assert image_unit_specs is not None, "Image unit defaults must be specified for image units pricing type"
+            # convert to cents per 1024*1024 image iterations
+            normalization_factor = (1024 / image_unit_specs.height) * \
+                (1024 / image_unit_specs.width) * (1 / image_unit_specs.iterations)
+            normalized_input_price = input_price * normalization_factor
+        case DeepinfraModelPricingType.TOKENS:
+            # convert to cents per 1M tokens
+            normalized_input_price = input_price * 1_000_000 if input_price else None
+            normalized_output_price = output_price * 1_000_000 if output_price else None
+        case DeepinfraModelPricingType.INPUT_TOKENS:
+            # convert to cents per 1M tokens
+            normalized_input_price = input_price * 1_000_000 if input_price else None
+        case DeepinfraModelPricingType.OUTPUT_TOKENS:
+            # convert to cents per 1M tokens
+            normalized_output_price = output_price * 1_000_000 if output_price else None
+        case DeepinfraModelPricingType.INPUT_CHARACTER_LENGTH:
+            # convert to cents per 1M characters
+            normalized_input_price = input_price * 1_000_000 if input_price else None
+        case DeepinfraModelPricingType.OUTPUT_CHARACTER_LENGTH:
+            # convert to cents per 1M characters
+            normalized_output_price = output_price * 1_000_000 if output_price else None
+        case DeepinfraModelPricingType.INPUT_LENGTH:
+            # convert to cents per minute
+            normalized_input_price = input_price * 60 if input_price else None
+        case DeepinfraModelPricingType.OUTPUT_LENGTH:
+            # convert to cents per minute
+            normalized_output_price = output_price * 60 if output_price else None
+    return normalized_input_price, normalized_output_price
+
+
 def fetch_models() -> set[DeepinfraModelPriced]:
     response = requests.get(
         url="https://api.deepinfra.com/models/list",
@@ -150,42 +191,18 @@ def fetch_models() -> set[DeepinfraModelPriced]:
             pricing_type = DeepinfraModelPricingType(pricing_data["type"])
             input_price = pricing_data[pricing_type.input_price_key] if pricing_type.input_price_key else None
             output_price = pricing_data[pricing_type.output_price_key] if pricing_type.output_price_key else None
-            image_unit_defaults = DeepinfraImageUnitDefaults(
-                width=pricing_data[pricing_type.image_unit_default_width_key],
-                height=pricing_data[pricing_type.image_unit_default_height_key],
-                iterations=pricing_data[pricing_type.image_unit_default_iterations_key]
+            image_unit_specs = DeepinfraImageUnitSpecs(
+                width=pricing_data[pricing_type.image_unit_default_width_key] or 1024,
+                height=pricing_data[pricing_type.image_unit_default_height_key] or 1024,
+                iterations=pricing_data[pricing_type.image_unit_default_iterations_key] or 25
             ) if pricing_type == DeepinfraModelPricingType.IMAGE_UNITS else None
             # normalize prices
-            normalized_input_price = input_price
-            normalized_output_price = output_price
-            match pricing_type:
-                case DeepinfraModelPricingType.IMAGE_UNITS:
-                    assert input_price is not None, "Input price must be specified for image units pricing type"
-                    assert image_unit_defaults is not None, "Image unit defaults must be specified for image units pricing type"
-                    # convert to price per megapixel iteration
-                    normalized_input_price = input_price / (image_unit_defaults.pixel_ops / 1024 / 1024)
-                case DeepinfraModelPricingType.TOKENS:
-                    # convert to price per 1M tokens
-                    normalized_input_price = input_price * 1000000 if input_price else None 
-                    normalized_output_price = output_price * 1000000 if output_price else None
-                case DeepinfraModelPricingType.INPUT_TOKENS:
-                    # convert to price per 1M tokens
-                    normalized_input_price = input_price * 1000000 if input_price else None
-                case DeepinfraModelPricingType.OUTPUT_TOKENS:
-                    # convert to price per 1M tokens
-                    normalized_output_price = output_price * 1000000 if output_price else None
-                case DeepinfraModelPricingType.INPUT_CHARACTER_LENGTH:
-                    # convert to price per 1M characters
-                    normalized_input_price = input_price / 1000000 if input_price else None
-                case DeepinfraModelPricingType.OUTPUT_CHARACTER_LENGTH:
-                    # convert to price per 1M characters
-                    normalized_output_price = output_price / 1000000 if output_price else None
-                case DeepinfraModelPricingType.INPUT_LENGTH:
-                    # convert to price per minute
-                    normalized_input_price = input_price / 60 if input_price else None
-                case DeepinfraModelPricingType.OUTPUT_LENGTH:
-                    # convert to price per minute
-                    normalized_output_price = output_price / 60 if output_price else None
+            normalized_input_price, normalized_output_price = normalize_price(
+                pricing_type=pricing_type,
+                input_price=input_price,
+                output_price=output_price,
+                image_unit_specs=image_unit_specs,
+            )
             pricing = DeepinfraModelPricing(
                 type=pricing_type,
                 normalized_input_price=normalized_input_price,
@@ -208,8 +225,8 @@ def save_models_to_file(models: set[DeepinfraModelPriced] | list[DeepinfraModelP
     # sort models for consistent output
     sorted_models = sorted(models, key=lambda m: m.name)
     models_serialized = dict(
-        models = [asdict(model) for model in sorted_models],
-        timestamp = time.time()
+        models=[asdict(model) for model in sorted_models],
+        timestamp=time.time()
     )
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(models_serialized, f, ensure_ascii=False, indent=2)
@@ -220,7 +237,7 @@ def load_models_from_file(filename: str, return_timestap: bool = False) -> set[D
         models_loaded = json.load(f)
         # handle laoding the old save format
         if isinstance(models_loaded, list):
-            models_loaded = dict(models = models_loaded)
+            models_loaded = dict(models=models_loaded)
         models_set_loaded = set()
         for model_kwargs in models_loaded["models"]:
             # deserialize pricing
@@ -233,13 +250,15 @@ def load_models_from_file(filename: str, return_timestap: bool = False) -> set[D
         return models_set_loaded, timestamp
     return models_set_loaded
 
+
 def load_timestamp_from_file(filename: str) -> float | None:
     with open(filename, "r", encoding="utf-8") as f:
         models_loaded = json.load(f)
         # handle laoding the old save format
         if isinstance(models_loaded, list):
-            models_loaded = dict(models = models_loaded)
+            models_loaded = dict(models=models_loaded)
     return models_loaded.get("timestamp")
+
 
 if __name__ == "__main__":
     # Example usage of the fetch_models function
