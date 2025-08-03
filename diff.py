@@ -93,8 +93,7 @@ def compare_models(old: DeepinfraModelPriced, new: DeepinfraModelPriced) -> List
 
     return changes
 
-
-def main():
+def parse_args():
     available_hashes = find_cache_files()
     if not available_hashes:
         print("No cache files found in `cache/`. Run `monitor.py` first.")
@@ -128,6 +127,10 @@ def main():
         help="Output the differences in JSON format instead of plain text."
     )
     args = parser.parse_args()
+    return args
+
+def main():
+    args = parse_args()
     
     should_output_json = args.json
 
@@ -178,7 +181,7 @@ def main():
         changes_found = True
         model = models_old[name]
         if should_output_json:
-            print(f'{{"event": "removed", "model": "{name}", "details": {asdict(model)}}}')
+            print(f'{{"event": "removed", "model": "{name}"}}')
         else:
             print(f"{BLUE}[REMOVED] Model: '{name}'{RESET}")
             print(f"{RED}  - {model}{RESET}")
