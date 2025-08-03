@@ -129,6 +129,41 @@ def parse_args():
     args = parser.parse_args()
     return args
 
+def diff_modified_models(should_output_json, name, old_model, new_model):
+    # Use a special tag for deprecation events
+    if should_output_json:
+        modified_details = dict()
+        if old_model.deprecated != new_model.deprecated:
+            modified_details["deprecated"] = {
+                    "old": old_model.deprecated,
+                    "new": new_model.deprecated
+                }
+        if old_model.replaced_by != new_model.replaced_by:
+            modified_details["replaced_by"] = {
+                    "old": old_model.replaced_by,
+                    "new": new_model.replaced_by
+                }
+        if old_model.quantization != new_model.quantization:
+            modified_details["quantization"] = {
+                    "old": old_model.quantization,
+                    "new": new_model.quantization
+                }
+        if old_model.pricing != new_model.pricing:
+            modified_details["pricing"] = {
+                    "old": old_model.pricing,
+                    "new": new_model.pricing,
+                }
+        print(f'{{"event": "modified", "model": "{name}", "details": {modified_details}}}')
+    else:
+        if old_model.deprecated == 0 and new_model.deprecated > 0:
+            print(f"{YELLOW}[DEPRECATED] Model: '{name}'{RESET}")
+        else:
+            print(f"{BLUE}[CHANGE] Model: '{name}'{RESET}")
+        
+        diffs = compare_models(old_model, new_model)
+        for line in diffs:
+            print(line)
+
 def main():
     args = parse_args()
     
@@ -193,48 +228,7 @@ def main():
 
         if old_model != new_model:
             changes_found = True
-            diffs = compare_models(old_model, new_model)
-
-            # Use a special tag for deprecation events
-            if old_model.deprecated == 0 and new_model.deprecated > 0:
-                if should_output_json:
-                    deprecated_details = dict(
-                        deprecated=new_model.deprecated,
-                        replaced_by=new_model.replaced_by
-                    )
-                    print(f'{{"event": "deprecated", "model": "{name}", "details": {deprecated_details}}}')
-                else:
-                    print(f"{YELLOW}[DEPRECATED] Model: '{name}'{RESET}")
-            else:
-                if should_output_json:
-                    modified_details = dict()
-                    if old_model.deprecated != new_model.deprecated:
-                        modified_details["deprecated"] = {
-                            "old": old_model.deprecated,
-                            "new": new_model.deprecated
-                        }
-                    if old_model.replaced_by != new_model.replaced_by:
-                        modified_details["replaced_by"] = {
-                            "old": old_model.replaced_by,
-                            "new": new_model.replaced_by
-                        }
-                    if old_model.quantization != new_model.quantization:
-                        modified_details["quantization"] = {
-                            "old": old_model.quantization,
-                            "new": new_model.quantization
-                        }
-                    if old_model.pricing != new_model.pricing:
-                        modified_details["pricing"] = {
-                            "old": old_model.pricing,
-                            "new": new_model.pricing,
-                        }
-                    print(f'{{"event": "modified", "model": "{name}", "details": {modified_details}}}')
-                else:
-                    print(f"{BLUE}[CHANGE] Model: '{name}'{RESET}")
-
-            for line in diffs:
-                if not should_output_json:
-                    print(line)
+            diff_modified_models(should_output_json, name, old_model, new_model)
 
     if not changes_found:
         print("No differences found between the two snapshots.")
