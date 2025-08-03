@@ -132,6 +132,10 @@ def main():
     should_output_json = args.json
 
     hash1, hash2 = args.hash1, args.hash2
+    
+    if hash1 == hash2:
+        print("same hashes provided. No comparison needed.")
+        sys.exit(0)
 
     try:
         models_old_set = load_models_from_file(os.path.join(CACHE_DIR, f"models_{hash1}.json"))
