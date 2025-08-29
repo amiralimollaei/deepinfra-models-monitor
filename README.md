@@ -62,7 +62,7 @@ python3 monitor.py
 
 ### Comparing Snapshots with `diff.py`
 
-Once you have run `monitor.py` at least twice, you will have multiple snapshots in the `cache/` directory. You can compare any two of these snapshots using `diff.py`.
+Once you have run `monitor.py` and have multiple snapshots in the `cache/` directory. You can compare any two of these snapshots using `diff.py`.
 
 1. **List available snapshots:**
 
