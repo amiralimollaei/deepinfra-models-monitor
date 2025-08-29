@@ -59,3 +59,37 @@ It is meant to run periodically in the background and it is recomended to run th
 ```bash
 python3 monitor.py
 ```
+
+### Comparing Snapshots with `diff.py`
+
+Once you have run `monitor.py` at least twice, you will have multiple snapshots in the `cache/` directory. You can compare any two of these snapshots using `diff.py`.
+
+1. **List available snapshots:**
+
+   To see which snapshots are available for comparison, you can run `diff.py` with the `-h` or `--help` flag. This will list all the hashes of the snapshots found in the `cache/` directory, along with the timestamp of when they were created.
+
+   ```bash
+   python3 diff.py -h
+   ```
+
+2. **Run the diff:**
+
+   To compare two snapshots, provide their hashes as arguments. The first hash should be the older state and the second hash should be the newer state.
+
+   ```bash
+   python3 diff.py <hash1> <hash2>
+   ```
+
+   For example:
+
+   ```bash
+   python3 diff.py fa4123d0d9f0988df103ef02b78fb0d09f1279be8597831ba5787828d55bc14a 5e8f3c7f9b8d2e1a4c6b8a0d9e8f7c6a5b4d3e2f1a0c9b8d7e6f5a4b3c2d1e0f
+   ```
+
+3. **JSON Output:**
+
+   For programmatic use, you can get the output in JSON format using the `--json` flag.
+
+   ```bash
+   python3 diff.py <hash1> <hash2> --json
+   ```
