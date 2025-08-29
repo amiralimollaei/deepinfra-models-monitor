@@ -80,6 +80,50 @@ class DeepinfraModelPricingType(StrEnum):
                 return "cents_per_output_sec"
 
     @property
+    def rate_per_input_price_cached_key(self) -> Optional[str]:
+        match self:
+            case DeepinfraModelPricingType.IMAGE_UNITS:
+                return None
+            case DeepinfraModelPricingType.TIME:
+                return None
+            case DeepinfraModelPricingType.TOKENS:
+                return "rate_per_input_token_cached"
+            case DeepinfraModelPricingType.INPUT_TOKENS:
+                return None
+            case DeepinfraModelPricingType.OUTPUT_TOKENS:
+                return None
+            case DeepinfraModelPricingType.INPUT_CHARACTER_LENGTH:
+                return None
+            case DeepinfraModelPricingType.OUTPUT_CHARACTER_LENGTH:
+                return None
+            case DeepinfraModelPricingType.INPUT_LENGTH:
+                return None
+            case DeepinfraModelPricingType.OUTPUT_LENGTH:
+                return None
+    
+    @property
+    def rate_per_input_price_cache_write_key(self) -> Optional[str]:
+        match self:
+            case DeepinfraModelPricingType.IMAGE_UNITS:
+                return None
+            case DeepinfraModelPricingType.TIME:
+                return None
+            case DeepinfraModelPricingType.TOKENS:
+                return "rate_per_input_token_cache_write"
+            case DeepinfraModelPricingType.INPUT_TOKENS:
+                return None
+            case DeepinfraModelPricingType.OUTPUT_TOKENS:
+                return None
+            case DeepinfraModelPricingType.INPUT_CHARACTER_LENGTH:
+                return None
+            case DeepinfraModelPricingType.OUTPUT_CHARACTER_LENGTH:
+                return None
+            case DeepinfraModelPricingType.INPUT_LENGTH:
+                return None
+            case DeepinfraModelPricingType.OUTPUT_LENGTH:
+                return None
+    
+    @property
     def is_input_priced(self) -> bool:
         return self.input_price_key is not None
 
@@ -120,6 +164,8 @@ class DeepinfraModelPricing:  # prices are in cents
     type: DeepinfraModelPricingType
     normalized_input_price: Optional[float]
     normalized_output_price: Optional[float]
+    rate_per_input_price_cached: Optional[float]
+    rate_per_input_price_cache_write: Optional[float]
 
 
 @dataclass(frozen=True)
@@ -190,6 +236,8 @@ def fetch_models() -> set[DeepinfraModelPriced]:
             pricing_data = model_data["pricing"]
             pricing_type = DeepinfraModelPricingType(pricing_data["type"])
             input_price = pricing_data[pricing_type.input_price_key] if pricing_type.input_price_key else None
+            rate_per_input_price_cached = pricing_data[pricing_type.rate_per_input_price_cached_key] if pricing_type.rate_per_input_price_cached_key else None
+            rate_per_input_price_cache_write = pricing_data[pricing_type.rate_per_input_price_cache_write_key] if pricing_type.rate_per_input_price_cache_write_key else None
             output_price = pricing_data[pricing_type.output_price_key] if pricing_type.output_price_key else None
             image_unit_specs = DeepinfraImageUnitSpecs(
                 width=pricing_data[pricing_type.image_unit_default_width_key] or 1024,
@@ -207,6 +255,8 @@ def fetch_models() -> set[DeepinfraModelPriced]:
                 type=pricing_type,
                 normalized_input_price=normalized_input_price,
                 normalized_output_price=normalized_output_price,
+                rate_per_input_price_cached=rate_per_input_price_cached,
+                rate_per_input_price_cache_write=rate_per_input_price_cache_write
             )
             model = DeepinfraModelPriced(
                 name=model_data["model_name"],
