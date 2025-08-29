@@ -82,6 +82,14 @@ def compare_models(old: DeepinfraModelPriced, new: DeepinfraModelPriced) -> List
         changes.append(f"{RED}  - Output Price: {format_pricing(old.pricing.type, old.pricing.normalized_output_price)}{RESET}")
         changes.append(f"{GREEN}  + Output Price: {format_pricing(new.pricing.type, new.pricing.normalized_output_price)}{RESET}")
 
+    if old.pricing.rate_per_input_price_cached != new.pricing.rate_per_input_price_cached:
+        changes.append(f"{RED}  - Cached Input Rate: {format_pricing(old.pricing.type, old.pricing.rate_per_input_price_cached)}{RESET}")
+        changes.append(f"{GREEN}  + Cached Input Rate: {format_pricing(new.pricing.type, new.pricing.rate_per_input_price_cached)}{RESET}")
+    
+    if old.pricing.rate_per_input_price_cache_write != new.pricing.rate_per_input_price_cache_write:
+        changes.append(f"{RED}  - Cache Write Input Rate: {format_pricing(old.pricing.type, old.pricing.rate_per_input_price_cache_write)}{RESET}")
+        changes.append(f"{GREEN}  + Cache Write Input Rate: {format_pricing(new.pricing.type, new.pricing.rate_per_input_price_cache_write)}{RESET}")
+    
     # Compare other attributes
     if old.quantization != new.quantization:
         changes.append(f"{RED}  - Quantization: {format_quantization(old.quantization)}{RESET}")
