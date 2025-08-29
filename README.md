@@ -10,7 +10,7 @@ This project provides the core functionality to track the DeepInfra model catalo
 
 The monitor detects:
 
-- **Price Changes:** Including subtle changes in pricing units.
+- **Price Changes:** Including subtle changes in pricing units and cached input rates.
 - **New Models:** When new models are added to the platform.
 - **Removed Models:** When models are no longer listed.
 - **Quantization Changes:** e.g., a model switching from FP16 to INT8.
@@ -48,13 +48,14 @@ The script operates in a simple, robust cycle:
 2. **Install dependencies:**
 
     ```bash
-    pip install -r requirements.txt
+    pip3 install -r requirements.txt
     ```
 
 ### Usage
 
 The primary entry point is `monitor.py`.
-It is meant to run periodically in the background.
+It is meant to run periodically in the background and it is recomended to run this with a `cron` task every 5 minutes.
 
 ```bash
-python monitor.py
+python3 monitor.py
+```
