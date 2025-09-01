@@ -164,8 +164,8 @@ class DeepinfraModelPricing:  # prices are in cents
     type: DeepinfraModelPricingType
     normalized_input_price: Optional[float]
     normalized_output_price: Optional[float]
-    rate_per_input_price_cached: Optional[float]
-    rate_per_input_price_cache_write: Optional[float]
+    rate_per_input_price_cached: Optional[float] = None
+    rate_per_input_price_cache_write: Optional[float]  = None
 
 
 @dataclass(frozen=True)
