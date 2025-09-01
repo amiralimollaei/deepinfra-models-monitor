@@ -20,9 +20,11 @@ YELLOW = "\033[93m"
 BLUE = "\033[94m"
 RESET = "\033[0m"
 
+
 def print_json(**kwargs):
     """Prints data in JSON format."""
     print(json.dumps(kwargs, ensure_ascii=False))
+
 
 def find_cache_files() -> List[str]:
     """Finds all cache files and returns their hashes."""
@@ -30,6 +32,7 @@ def find_cache_files() -> List[str]:
         return []
     # Extracts the hash from filenames like 'models_{hash}.json'
     return [p.stem.split('_')[1] for p in CACHE_DIR.glob("models_*.json")]
+
 
 def format_pricing(type: DeepinfraModelPricingType, value: float) -> str:
     """Formats a pricing value based on its type."""
@@ -48,10 +51,11 @@ def format_pricing(type: DeepinfraModelPricingType, value: float) -> str:
             unit = "1024x1024 image itereation"
         case _:
             raise ValueError(f"Unsupported pricing type: {type}")
-    
+
     if value is None:
         return f"0.00000 per {unit}"
     return f"${value/100:.5f} per {unit}"
+
 
 def format_timestamp(value: float) -> str:
     """Formats a timestamp value to a human-readable string."""
@@ -59,11 +63,13 @@ def format_timestamp(value: float) -> str:
         return "N/A"
     return time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(value))
 
+
 def format_quantization(value: float) -> str:
     """Formats a quantization value."""
     if value is None:
         return "float32"
     return value
+
 
 def compare_models(old: DeepinfraModelPriced, new: DeepinfraModelPriced) -> List[str]:
     """Compares two model objects and returns a list of formatted diff strings."""
@@ -75,21 +81,29 @@ def compare_models(old: DeepinfraModelPriced, new: DeepinfraModelPriced) -> List
         changes.append(f"{GREEN}  + Pricing Type: {new.pricing.type}{RESET}")
 
     if old.pricing.normalized_input_price != new.pricing.normalized_input_price:
-        changes.append(f"{RED}  - Input Price: {format_pricing(old.pricing.type, old.pricing.normalized_input_price)}{RESET}")
-        changes.append(f"{GREEN}  + Input Price: {format_pricing(new.pricing.type, new.pricing.normalized_input_price)}{RESET}")
+        changes.append(
+            f"{RED}  - Input Price: {format_pricing(old.pricing.type, old.pricing.normalized_input_price)}{RESET}")
+        changes.append(
+            f"{GREEN}  + Input Price: {format_pricing(new.pricing.type, new.pricing.normalized_input_price)}{RESET}")
 
     if old.pricing.normalized_output_price != new.pricing.normalized_output_price:
-        changes.append(f"{RED}  - Output Price: {format_pricing(old.pricing.type, old.pricing.normalized_output_price)}{RESET}")
-        changes.append(f"{GREEN}  + Output Price: {format_pricing(new.pricing.type, new.pricing.normalized_output_price)}{RESET}")
+        changes.append(
+            f"{RED}  - Output Price: {format_pricing(old.pricing.type, old.pricing.normalized_output_price)}{RESET}")
+        changes.append(
+            f"{GREEN}  + Output Price: {format_pricing(new.pricing.type, new.pricing.normalized_output_price)}{RESET}")
 
     if old.pricing.rate_per_input_price_cached != new.pricing.rate_per_input_price_cached:
-        changes.append(f"{RED}  - Cached Input Rate: {format_pricing(old.pricing.type, old.pricing.rate_per_input_price_cached)}{RESET}")
-        changes.append(f"{GREEN}  + Cached Input Rate: {format_pricing(new.pricing.type, new.pricing.rate_per_input_price_cached)}{RESET}")
-    
+        changes.append(
+            f"{RED}  - Cached Input Rate: {format_pricing(old.pricing.type, old.pricing.rate_per_input_price_cached)}{RESET}")
+        changes.append(
+            f"{GREEN}  + Cached Input Rate: {format_pricing(new.pricing.type, new.pricing.rate_per_input_price_cached)}{RESET}")
+
     if old.pricing.rate_per_input_price_cache_write != new.pricing.rate_per_input_price_cache_write:
-        changes.append(f"{RED}  - Cache Write Input Rate: {format_pricing(old.pricing.type, old.pricing.rate_per_input_price_cache_write)}{RESET}")
-        changes.append(f"{GREEN}  + Cache Write Input Rate: {format_pricing(new.pricing.type, new.pricing.rate_per_input_price_cache_write)}{RESET}")
-    
+        changes.append(
+            f"{RED}  - Cache Write Input Rate: {format_pricing(old.pricing.type, old.pricing.rate_per_input_price_cache_write)}{RESET}")
+        changes.append(
+            f"{GREEN}  + Cache Write Input Rate: {format_pricing(new.pricing.type, new.pricing.rate_per_input_price_cache_write)}{RESET}")
+
     # Compare other attributes
     if old.quantization != new.quantization:
         changes.append(f"{RED}  - Quantization: {format_quantization(old.quantization)}{RESET}")
@@ -105,21 +119,24 @@ def compare_models(old: DeepinfraModelPriced, new: DeepinfraModelPriced) -> List
 
     return changes
 
+
 def parse_args():
     available_hashes = find_cache_files()
     if not available_hashes:
         print("No cache files found in `cache/`. Run `monitor.py` first.")
         sys.exit(1)
-    
-    available_hashes_list = []
-    for _hash in available_hashes:
-        hash_timestamp = load_timestamp_from_file(os.path.join(CACHE_DIR, f"models_{_hash}.json"))
+
+    available_hashes_timestamps = [load_timestamp_from_file(
+        os.path.join(CACHE_DIR, f"models_{_hash}.json")
+    ) for _hash in available_hashes]
+
+    available_hashes_str_list = []
+    for _hash, hash_timestamp in sorted(zip(available_hashes, available_hashes_timestamps), key=lambda x: x[1]):
         available_hash_str = f"{_hash}"
         if hash_timestamp:
             available_hash_str += " - " + time.strftime("%a %b %d %H:%M:%S %Y", time.gmtime(hash_timestamp))
-        available_hashes_list.append("\n\t" + available_hash_str)
-        
-    available_hashes = ''.join(available_hashes_list)
+        available_hashes_str_list.append("\n\t" + available_hash_str)
+    available_hashes = ''.join(available_hashes_str_list)
 
     parser = argparse.ArgumentParser(
         description=f"Compare two DeepInfra model snapshots from the cache. \nAvailable: {available_hashes}",
@@ -135,15 +152,16 @@ def parse_args():
         help=f"The second (newer) state hash."
     )
     parser.add_argument("--json",
-        action="store_true",
-        help="Output the differences in JSON format instead of plain text."
-    )
+                        action="store_true",
+                        help="Output the differences in JSON format instead of plain text."
+                        )
     args = parser.parse_args()
     return args
 
+
 def diff_modified_models(should_output_json, name, old_model, new_model):
     if should_output_json:
-        modified_details = dict() # only contain modified fields
+        modified_details = dict()  # only contain modified fields
         if old_model.deprecated != new_model.deprecated:
             modified_details["deprecated"] = dict(
                 old=old_model.deprecated,
@@ -171,21 +189,22 @@ def diff_modified_models(should_output_json, name, old_model, new_model):
             print(f"{YELLOW}[DEPRECATED] Model: '{name}'{RESET}")
         else:
             print(f"{BLUE}[CHANGE] Model: '{name}'{RESET}")
-        
+
         diffs = compare_models(old_model, new_model)
         for line in diffs:
             print(line)
 
+
 def main():
     args = parse_args()
-    
+
     should_output_json = args.json
 
     hash1, hash2 = args.hash1, args.hash2
-    
+
     print(f"\nComparing states: {YELLOW}{hash1}{RESET} -> {YELLOW}{hash2}{RESET}")
     print("---")
-    
+
     if hash1 == hash2:
         print("same hashes provided. No comparison needed.")
         print("---")
