@@ -67,7 +67,7 @@ def format_timestamp(value: float) -> str:
 def format_quantization(value: float) -> str:
     """Formats a quantization value."""
     if value is None:
-        return "float32"
+        return "None"
     return value
 
 
