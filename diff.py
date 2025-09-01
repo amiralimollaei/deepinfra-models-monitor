@@ -71,6 +71,13 @@ def format_quantization(value: float) -> str:
     return value
 
 
+def format_multiplier(value: float) -> str:
+    """Formats a multiplier (percentage) value."""
+    if value is None:
+        return "NaN"
+    return f"{value*100:0.2f}%"
+
+
 def compare_models(old: DeepinfraModelPriced, new: DeepinfraModelPriced) -> List[str]:
     """Compares two model objects and returns a list of formatted diff strings."""
     changes = []
@@ -94,15 +101,15 @@ def compare_models(old: DeepinfraModelPriced, new: DeepinfraModelPriced) -> List
 
     if old.pricing.rate_per_input_price_cached != new.pricing.rate_per_input_price_cached:
         changes.append(
-            f"{RED}  - Cached Input Rate: {format_pricing(old.pricing.type, old.pricing.rate_per_input_price_cached)}{RESET}")
+            f"{RED}  - Cached Input Rate: {format_multiplier(old.pricing.rate_per_input_price_cached)}{RESET}")
         changes.append(
-            f"{GREEN}  + Cached Input Rate: {format_pricing(new.pricing.type, new.pricing.rate_per_input_price_cached)}{RESET}")
+            f"{GREEN}  + Cached Input Rate: {format_multiplier(new.pricing.rate_per_input_price_cached)}{RESET}")
 
     if old.pricing.rate_per_input_price_cache_write != new.pricing.rate_per_input_price_cache_write:
         changes.append(
-            f"{RED}  - Cache Write Input Rate: {format_pricing(old.pricing.type, old.pricing.rate_per_input_price_cache_write)}{RESET}")
+            f"{RED}  - Cache Write Input Rate: {format_multiplier(old.pricing.rate_per_input_price_cache_write)}{RESET}")
         changes.append(
-            f"{GREEN}  + Cache Write Input Rate: {format_pricing(new.pricing.type, new.pricing.rate_per_input_price_cache_write)}{RESET}")
+            f"{GREEN}  + Cache Write Input Rate: {format_multiplier(new.pricing.rate_per_input_price_cache_write)}{RESET}")
 
     # Compare other attributes
     if old.quantization != new.quantization:
