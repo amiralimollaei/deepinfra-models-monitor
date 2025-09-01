@@ -78,6 +78,18 @@ def format_multiplier(value: float) -> str:
     return f"{value*100:0.2f}%"
 
 
+def format_added_model(value: DeepinfraModelPriced):
+    """Formats a DeepinfraModelPriced object to a string."""
+    lines = []
+    lines.append(f"  + Quantization: {format_quantization(value.quantization)}")
+    lines.append("  + Pricing:")
+    lines.append(f"      Input Price: {format_pricing(value.pricing.type, value.pricing.normalized_input_price)}")
+    lines.append(f"      Output Price: {format_pricing(value.pricing.type, value.pricing.normalized_output_price)}")
+    lines.append(f"      Cached Input Rate: {format_multiplier(value.pricing.rate_per_input_price_cached)}")
+    lines.append(f"      Cache Write Input Rate: {format_multiplier(value.pricing.rate_per_input_price_cache_write)}")
+    return "\n".join(lines)
+
+
 def compare_models(old: DeepinfraModelPriced, new: DeepinfraModelPriced) -> List[str]:
     """Compares two model objects and returns a list of formatted diff strings."""
     changes = []
@@ -247,7 +259,7 @@ def main():
             print_json(event="added", model=name, details=asdict(model))
         else:
             print(f"{BLUE}[ADDED] Model: '{name}'{RESET}")
-            print(f"{GREEN}  + {model}{RESET}")
+            print(f"{GREEN}{format_added_model(model)}{RESET}")
 
     # 2. Report Removed Models
     for name in sorted(list(removed_models)):
