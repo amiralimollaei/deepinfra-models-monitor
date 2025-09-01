@@ -64,7 +64,7 @@ def format_timestamp(value: float) -> str:
     return time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(value))
 
 
-def format_quantization(value: float) -> str:
+def format_quantization(value: str) -> str:
     """Formats a quantization value."""
     if value is None:
         return "None"
