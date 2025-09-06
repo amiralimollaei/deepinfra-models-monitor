@@ -60,6 +60,37 @@ It is meant to run periodically in the background and it is recomended to run th
 python3 monitor.py
 ```
 
+### Executing a Script on Change Detection
+
+You can automatically trigger a script whenever `monitor.py` detects a change in the model catalog. This is useful for sending notifications, updating a database, or triggering other automated workflows.
+
+Use the `--exec-on-change` argument to specify the command to run. You can use the following placeholders in your command:
+- `{hash}`: This will be replaced with the hash of the new snapshot.
+- `{prev_hash}`: This will be replaced with the hash of the previous snapshot.
+
+**Note:** If you use `{prev_hash}` in your command and there is no previous snapshot (e.g., on the first run), the script will print a notice and will not execute the command.
+
+**Examples:**
+
+1.  **Log new snapshots:**
+
+    ```bash
+    python3 monitor.py --exec-on-change "echo 'New model snapshot created: {hash}' >> changes.log"
+    ```
+
+2.  **Run a diff script automatically:**
+
+    ```bash
+    python3 monitor.py --exec-on-change "./my_diff_script.sh {prev_hash} {hash}"
+    ```
+    This will execute `my_diff_script.sh` with the old and new hashes as arguments, allowing you to automate comparisons.
+
+3.  **Using `diff.py` to log changes:**
+    ```bash
+    python3 monitor.py --exec-on-change "python3 diff.py {prev_hash} {hash} --json >> changes.jsonl"
+    ```
+    This command will automatically run the `diff.py` script and append the JSON output to a log file.
+
 ### Comparing Snapshots with `diff.py`
 
 Once you have run `monitor.py` and have multiple snapshots in the `cache/` directory. You can compare any two of these snapshots using `diff.py`.

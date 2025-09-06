@@ -141,10 +141,7 @@ def compare_models(old: DeepinfraModelPriced, new: DeepinfraModelPriced) -> List
 
 def parse_args():
     available_hashes = find_cache_files()
-    if not available_hashes:
-        print("No cache files found in `cache/`. Run `monitor.py` first.")
-        sys.exit(1)
-
+    description = "Compare two DeepInfra model snapshots from the cache."
     available_hashes_timestamps = [load_timestamp_from_file(
         os.path.join(CACHE_DIR, f"models_{_hash}.json")
     ) for _hash in available_hashes]
@@ -155,10 +152,11 @@ def parse_args():
         if hash_timestamp:
             available_hash_str += " - " + time.strftime("%a %b %d %H:%M:%S %Y", time.gmtime(hash_timestamp))
         available_hashes_str_list.append("\n\t" + available_hash_str)
-    available_hashes = ''.join(available_hashes_str_list)
+    available_hashes_str = ''.join(available_hashes_str_list)
+    description += f" \nAvailable: {available_hashes_str}"
 
     parser = argparse.ArgumentParser(
-        description=f"Compare two DeepInfra model snapshots from the cache. \nAvailable: {available_hashes}",
+        description=description,
         formatter_class=argparse.RawTextHelpFormatter
     )
 
@@ -216,24 +214,31 @@ def diff_modified_models(should_output_json: bool, name: str, old_model: Deepinf
 
 def main():
     args = parse_args()
-
     should_output_json = args.json
 
     hash1, hash2 = args.hash1, args.hash2
 
-    print(f"\nComparing states: {YELLOW}{hash1}{RESET} -> {YELLOW}{hash2}{RESET}")
-    print("---")
+    if not should_output_json:
+        print(f"\nComparing states: {YELLOW}{hash1}{RESET} -> {YELLOW}{hash2}{RESET}")
+        print("---")
 
     if hash1 == hash2:
-        print("same hashes provided. No comparison needed.")
-        print("---")
+        if should_output_json:
+            print_json(event="no_change", message="Hashes are identical. No comparison needed.")
+        else:
+            print("same hashes provided. No comparison needed.")
+            print("---")
         sys.exit(0)
 
     try:
         models_old_set = load_models_from_file(os.path.join(CACHE_DIR, f"models_{hash1}.json"))
         models_new_set = load_models_from_file(os.path.join(CACHE_DIR, f"models_{hash2}.json"))
     except FileNotFoundError as e:
-        print(f"Error: {e}. Make sure the hashes are correct and the cache files exist.")
+        error_message = f"Error: {e}. Make sure the hashes are correct and the cache files exist."
+        if should_output_json:
+            print_json(event="error", message=error_message)
+        else:
+            print(error_message)
         sys.exit(1)
 
     # Convert sets to dictionaries keyed by model name for easy lookup
@@ -280,9 +285,11 @@ def main():
             changes_found = True
             diff_modified_models(should_output_json, name, old_model, new_model)
 
-    if not changes_found:
+    if not (changes_found or should_output_json):
         print("No differences found between the two snapshots.")
-    print("---")
+
+    if not should_output_json:
+        print("---")
 
 
 if __name__ == "__main__":
