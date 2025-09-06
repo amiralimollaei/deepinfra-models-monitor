@@ -74,11 +74,11 @@ def format_quantization(value: str) -> str:
 def format_multiplier(value: float) -> str:
     """Formats a multiplier (percentage) value."""
     if value is None:
-        return "NaN"
+        return "N/A"
     return f"{value*100:0.2f}%"
 
 
-def format_added_model(value: DeepinfraModelPriced):
+def format_added_model(value: DeepinfraModelPriced) -> str:
     """Formats a DeepinfraModelPriced object to a string."""
     lines = []
     lines.append(f"  + Quantization: {format_quantization(value.quantization)}")
@@ -90,53 +90,42 @@ def format_added_model(value: DeepinfraModelPriced):
     return "\n".join(lines)
 
 
-def compare_models(old: DeepinfraModelPriced, new: DeepinfraModelPriced) -> List[str]:
-    """Compares two model objects and returns a list of formatted diff strings."""
-    changes = []
+def diff_models(old: DeepinfraModelPriced, new: DeepinfraModelPriced) -> None:
+    """Compares two model objects and prints a formatted diff."""
 
     # Compare pricing
     if old.pricing.type != new.pricing.type:
-        changes.append(f"{RED}  - Pricing Type: {old.pricing.type}{RESET}")
-        changes.append(f"{GREEN}  + Pricing Type: {new.pricing.type}{RESET}")
+        print(f"{RED}  - Pricing Type: {old.pricing.type}{RESET}")
+        print(f"{GREEN}  + Pricing Type: {new.pricing.type}{RESET}")
 
     if old.pricing.normalized_input_price != new.pricing.normalized_input_price:
-        changes.append(
-            f"{RED}  - Input Price: {format_pricing(old.pricing.type, old.pricing.normalized_input_price)}{RESET}")
-        changes.append(
-            f"{GREEN}  + Input Price: {format_pricing(new.pricing.type, new.pricing.normalized_input_price)}{RESET}")
+        print(f"{RED}  - Input Price: {format_pricing(old.pricing.type, old.pricing.normalized_input_price)}{RESET}")
+        print(f"{GREEN}  + Input Price: {format_pricing(new.pricing.type, new.pricing.normalized_input_price)}{RESET}")
 
     if old.pricing.normalized_output_price != new.pricing.normalized_output_price:
-        changes.append(
-            f"{RED}  - Output Price: {format_pricing(old.pricing.type, old.pricing.normalized_output_price)}{RESET}")
-        changes.append(
-            f"{GREEN}  + Output Price: {format_pricing(new.pricing.type, new.pricing.normalized_output_price)}{RESET}")
+        print(f"{RED}  - Output Price: {format_pricing(old.pricing.type, old.pricing.normalized_output_price)}{RESET}")
+        print(f"{GREEN}  + Output Price: {format_pricing(new.pricing.type, new.pricing.normalized_output_price)}{RESET}")
 
     if old.pricing.rate_per_input_price_cached != new.pricing.rate_per_input_price_cached:
-        changes.append(
-            f"{RED}  - Cached Input Rate: {format_multiplier(old.pricing.rate_per_input_price_cached)}{RESET}")
-        changes.append(
-            f"{GREEN}  + Cached Input Rate: {format_multiplier(new.pricing.rate_per_input_price_cached)}{RESET}")
+        print(f"{RED}  - Cached Input Rate: {format_multiplier(old.pricing.rate_per_input_price_cached)}{RESET}")
+        print(f"{GREEN}  + Cached Input Rate: {format_multiplier(new.pricing.rate_per_input_price_cached)}{RESET}")
 
     if old.pricing.rate_per_input_price_cache_write != new.pricing.rate_per_input_price_cache_write:
-        changes.append(
-            f"{RED}  - Cache Write Input Rate: {format_multiplier(old.pricing.rate_per_input_price_cache_write)}{RESET}")
-        changes.append(
-            f"{GREEN}  + Cache Write Input Rate: {format_multiplier(new.pricing.rate_per_input_price_cache_write)}{RESET}")
+        print(f"{RED}  - Cache Write Input Rate: {format_multiplier(old.pricing.rate_per_input_price_cache_write)}{RESET}")
+        print(f"{GREEN}  + Cache Write Input Rate: {format_multiplier(new.pricing.rate_per_input_price_cache_write)}{RESET}")
 
     # Compare other attributes
     if old.quantization != new.quantization:
-        changes.append(f"{RED}  - Quantization: {format_quantization(old.quantization)}{RESET}")
-        changes.append(f"{GREEN}  + Quantization: {format_quantization(new.quantization)}{RESET}")
+        print(f"{RED}  - Quantization: {format_quantization(old.quantization)}{RESET}")
+        print(f"{GREEN}  + Quantization: {format_quantization(new.quantization)}{RESET}")
 
     if old.deprecated != new.deprecated:
-        changes.append(f"{RED}  - Deprecated (timestamp): {format_timestamp(old.deprecated)}{RESET}")
-        changes.append(f"{GREEN}  + Deprecated (timestamp): {format_timestamp(new.deprecated)}{RESET}")
+        print(f"{RED}  - Deprecated (timestamp): {format_timestamp(old.deprecated)}{RESET}")
+        print(f"{GREEN}  + Deprecated (timestamp): {format_timestamp(new.deprecated)}{RESET}")
 
     if old.replaced_by != new.replaced_by:
-        changes.append(f"{RED}  - Replaced by: {old.replaced_by}{RESET}")
-        changes.append(f"{GREEN}  + Replaced by: {new.replaced_by}{RESET}")
-
-    return changes
+        print(f"{RED}  - Replaced by: {old.replaced_by}{RESET}")
+        print(f"{GREEN}  + Replaced by: {new.replaced_by}{RESET}")
 
 
 def parse_args():
@@ -202,14 +191,12 @@ def diff_modified_models(should_output_json: bool, name: str, old_model: Deepinf
         print_json(event="modified", model=name, details=modified_details)
     else:
         # Use a special tag for deprecation events in plain text output
-        if old_model.deprecated == 0 and new_model.deprecated > 0:
+        if (old_model.deprecated or 0) == 0 and (new_model.deprecated or 0) > 0:
             print(f"{YELLOW}[DEPRECATED] Model: '{name}'{RESET}")
         else:
             print(f"{BLUE}[CHANGE] Model: '{name}'{RESET}")
 
-        diffs = compare_models(old_model, new_model)
-        for line in diffs:
-            print(line)
+        diff_models(old_model, new_model)
 
 
 def main():
@@ -254,11 +241,10 @@ def main():
     added_models = new_names - old_names
     common_models = old_names & new_names
 
-    changes_found = False
+    changes_found = (len(added_models) + len(removed_models)) != 0
 
     # 1. Report Added Models
     for name in sorted(list(added_models)):
-        changes_found = True
         model = models_new[name]
         if should_output_json:
             print_json(event="added", model=name, details=asdict(model))
@@ -268,7 +254,6 @@ def main():
 
     # 2. Report Removed Models
     for name in sorted(list(removed_models)):
-        changes_found = True
         model = models_old[name]
         if should_output_json:
             print_json(event="removed", model=name)
