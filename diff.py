@@ -178,7 +178,7 @@ def parse_args():
     return args
 
 
-def diff_modified_models(should_output_json, name, old_model, new_model):
+def diff_modified_models(should_output_json: bool, name: str, old_model: DeepinfraModelPriced, new_model: DeepinfraModelPriced):
     if should_output_json:
         modified_details = dict()  # only contain modified fields
         if old_model.deprecated != new_model.deprecated:
@@ -198,8 +198,8 @@ def diff_modified_models(should_output_json, name, old_model, new_model):
             )
         if old_model.pricing != new_model.pricing:
             modified_details["pricing"] = dict(
-                old=old_model.pricing,
-                new=new_model.pricing,
+                old=asdict(old_model.pricing),
+                new=asdict(new_model.pricing),
             )
         print_json(event="modified", model=name, details=modified_details)
     else:
