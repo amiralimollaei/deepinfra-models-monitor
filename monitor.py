@@ -29,6 +29,12 @@ if __name__ == "__main__":
 
     os.makedirs(CACHE_DIR, exist_ok=True)
 
+    # Find previous hash
+    cache_files = [f for f in CACHE_DIR.glob("models_*.json") if f.is_file()]
+    prev_hash = None
+    if cache_files:
+        latest_cache_file = max(cache_files, key=lambda f: load_timestamp_from_file(str(f)) or 0)
+        prev_hash = latest_cache_file.stem.split('_', 1)[1]
 
     models = fetch_models()
     order_independant_hash = create_order_independent_hash(models)
@@ -46,13 +52,6 @@ if __name__ == "__main__":
         if args.exec_script:
             command = args.exec_script
             if "{prev_hash}" in command:
-                # Find previous hash
-                cache_files = [f for f in CACHE_DIR.glob("models_*.json") if f.is_file()]
-                prev_hash = None
-                if cache_files:
-                    latest_cache_file = max(cache_files, key=lambda f: load_timestamp_from_file(str(f)) or 0)
-                    prev_hash = latest_cache_file.stem.split('_', 1)[1]
-
                 if prev_hash:
                     command = command.replace("{prev_hash}", prev_hash)
                 else:
