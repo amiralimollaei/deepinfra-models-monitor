@@ -23,8 +23,10 @@ def create_order_independent_hash(models: set[DeepinfraModelPriced]) -> str:
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Monitor DeepInfra models for changes and run a script if a change is detected.")
-    parser.add_argument("--exec-on-change", dest="exec_script", type=str, help="The script to execute when a change is detected. Use {hash} as a placeholder for the new cache file hash and {prev_hash} for the previous one.")
+    parser = argparse.ArgumentParser(
+        description="Monitor DeepInfra models for changes and run a script if a change is detected.")
+    parser.add_argument("--exec-on-change", dest="exec_script", type=str,
+                        help="The script to execute when a change is detected. Use {hash} as a placeholder for the new cache file hash and {prev_hash} for the previous one.")
     args = parser.parse_args()
 
     os.makedirs(CACHE_DIR, exist_ok=True)
@@ -55,9 +57,10 @@ if __name__ == "__main__":
                 if prev_hash:
                     command = command.replace("{prev_hash}", prev_hash)
                 else:
-                    print("Notice: --exec-on-change command contains {prev_hash} but no previous cache file was found. Skipping execution.")
+                    print(
+                        "Notice: --exec-on-change command contains {prev_hash} but no previous cache file was found. Skipping execution.")
                     sys.exit(0)
-            
+
             command = command.replace("{hash}", order_independant_hash)
             print(f"Executing command: {command}")
             try:

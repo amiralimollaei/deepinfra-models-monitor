@@ -100,7 +100,7 @@ class DeepinfraModelPricingType(StrEnum):
                 return None
             case DeepinfraModelPricingType.OUTPUT_LENGTH:
                 return None
-    
+
     @property
     def rate_per_input_price_cache_write_key(self) -> Optional[str]:
         match self:
@@ -122,7 +122,7 @@ class DeepinfraModelPricingType(StrEnum):
                 return None
             case DeepinfraModelPricingType.OUTPUT_LENGTH:
                 return None
-    
+
     @property
     def is_input_priced(self) -> bool:
         return self.input_price_key is not None
@@ -194,8 +194,7 @@ def normalize_price(
             assert input_price is not None, "Input price must be specified for image units pricing type"
             assert image_unit_specs is not None, "Image unit defaults must be specified for image units pricing type"
             # convert to cents per 1024*1024 image iterations
-            normalization_factor = (1024 / image_unit_specs.height) * \
-                (1024 / image_unit_specs.width) * (1 / image_unit_specs.iterations)
+            normalization_factor = (1024 / image_unit_specs.height) * (1024 / image_unit_specs.width) * (1 / image_unit_specs.iterations)
             normalized_input_price = input_price * normalization_factor
         case DeepinfraModelPricingType.TOKENS:
             # convert to cents per 1M tokens
@@ -237,7 +236,8 @@ def fetch_models() -> set[DeepinfraModelPriced]:
             pricing_type = DeepinfraModelPricingType(pricing_data["type"])
             input_price = pricing_data[pricing_type.input_price_key] if pricing_type.input_price_key else None
             rate_per_input_price_cached = pricing_data[pricing_type.rate_per_input_price_cached_key] if pricing_type.rate_per_input_price_cached_key else None
-            rate_per_input_price_cache_write = pricing_data[pricing_type.rate_per_input_price_cache_write_key] if pricing_type.rate_per_input_price_cache_write_key else None
+            rate_per_input_price_cache_write = pricing_data[
+                pricing_type.rate_per_input_price_cache_write_key] if pricing_type.rate_per_input_price_cache_write_key else None
             output_price = pricing_data[pricing_type.output_price_key] if pricing_type.output_price_key else None
             image_unit_specs = DeepinfraImageUnitSpecs(
                 width=pricing_data[pricing_type.image_unit_default_width_key] or 1024,
