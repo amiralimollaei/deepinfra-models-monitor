@@ -10,7 +10,7 @@ import subprocess
 sys.path.append(str(Path(__file__).parent))
 from utils import DeepinfraModelPriced, fetch_models, save_models_to_file, load_timestamp_from_file
 
-CACHE_DIR = Path(os.path.join(str(Path(__file__).parent), "cache"))
+CACHE_DIR = Path(os.path.join(str(Path(__file__).parent), "monitor", "cache"))
 
 
 def create_order_independent_hash(models: set[DeepinfraModelPriced]) -> str:
