@@ -1,0 +1,43 @@
+name: Periodic Monitoring
+
+on:
+  schedule:
+    # This runs every 10 minutes
+    - cron: '*/10 * * * *'
+  # This allows you to run the workflow manually from the Actions tab for testing
+  workflow_dispatch:
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          # This enables caching for faster runs
+          enable-cache: true
+
+      - name: Run monitoring script
+        # 'uv run' will automatically handle environment creation
+        # and dependency installation based on your pyproject.toml/uv.lock
+        run: uv run monitor.py --exec-on-change "uv run diff.py {prev_hash} {hash} --json >> monitor/changes-{hash}.jsonl"
+      
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add "${{ github.event.inputs.filename }}"
+          
+          # Only commit if there are actual changes
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Manual download: ${{ github.event.inputs.filename }}"
+            git push
+          fi
