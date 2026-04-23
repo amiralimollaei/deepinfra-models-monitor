@@ -31,12 +31,12 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          git add "${{ github.event.inputs.filename }}"
+          git add --all
           
           # Only commit if there are actual changes
           if git diff --quiet && git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Manual download: ${{ github.event.inputs.filename }}"
+            git commit -m "monitor: upload pricing changes"
             git push
           fi
