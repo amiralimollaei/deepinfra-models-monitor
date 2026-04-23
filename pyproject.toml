@@ -1,0 +1,9 @@
+[project]
+name = "deepinfra-models-monitor"
+version = "1.0.0"
+description = "A lightweight, un-opinionated utility for detecting and logging model and pricing changes on the DeepInfra platform."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "requests>=2.33.1",
+]

@@ -282,20 +282,20 @@ def save_models_to_file(models: set[DeepinfraModelPriced] | list[DeepinfraModelP
         json.dump(models_serialized, f, ensure_ascii=False, indent=2)
 
 
-def load_models_from_file(filename: str, return_timestap: bool = False) -> set[DeepinfraModelPriced] | tuple[set[DeepinfraModelPriced], float]:
+def load_models_from_file(filename: str, return_timestap: bool = False) -> set[DeepinfraModelPriced] | tuple[set[DeepinfraModelPriced], float | None]:
     with open(filename, "r", encoding="utf-8") as f:
         models_loaded = json.load(f)
-        # handle laoding the old save format
+        # handle loading the old save format
         if isinstance(models_loaded, list):
             models_loaded = dict(models=models_loaded)
-        models_set_loaded = set()
+        models_set_loaded: set[DeepinfraModelPriced] = set()
         for model_kwargs in models_loaded["models"]:
             # deserialize pricing
             pricing = DeepinfraModelPricing(**model_kwargs["pricing"])
             model_kwargs["pricing"] = pricing
             # deserialize DeepinfraModel
             models_set_loaded.add(DeepinfraModelPriced(**model_kwargs))
-    timestamp = models_loaded.get("timestamp")
+    timestamp: float | None = models_loaded.get("timestamp") # pyright: ignore[reportAssignmentType]
     if return_timestap:
         return models_set_loaded, timestamp
     return models_set_loaded
@@ -304,7 +304,8 @@ def load_models_from_file(filename: str, return_timestap: bool = False) -> set[D
 def load_timestamp_from_file(filename: str) -> float | None:
     with open(filename, "r", encoding="utf-8") as f:
         models_loaded = json.load(f)
-        # handle laoding the old save format
+        # handle loading the old save format
         if isinstance(models_loaded, list):
             models_loaded = dict(models=models_loaded)
-    return models_loaded.get("timestamp")
+    timestamp: float | None = models_loaded.get("timestamp") # pyright: ignore[reportAssignmentType]
+    return timestamp
