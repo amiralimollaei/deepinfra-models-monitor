@@ -23,8 +23,7 @@ jobs:
           enable-cache: true
 
       - name: Run monitoring script
-        # 'uv run' will automatically handle environment creation
-        # and dependency installation based on your pyproject.toml/uv.lock
+        # 'uv run' will automatically handle environment creation and dependecies
         run: uv run monitor.py --exec-on-change "uv run diff.py {prev_hash} {hash} --json >> monitor/changes-{hash}.jsonl"
       
       - name: Commit and Push
