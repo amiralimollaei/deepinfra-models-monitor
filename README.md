@@ -66,6 +66,7 @@ uv run monitor.py
 You can automatically trigger a script whenever `monitor.py` detects a change in the model catalog. This is useful for sending notifications, updating a database, or triggering other automated workflows.
 
 Use the `--exec-on-change` argument to specify the command to run. You can use the following placeholders in your command:
+
 - `{hash}`: This will be replaced with the hash of the new snapshot.
 - `{prev_hash}`: This will be replaced with the hash of the previous snapshot.
 
@@ -73,23 +74,26 @@ Use the `--exec-on-change` argument to specify the command to run. You can use t
 
 **Examples:**
 
-1.  **Log new snapshots:**
+1. **Log new snapshots:**
 
     ```bash
     uv run monitor.py --exec-on-change "echo 'New model snapshot created: {hash}' >> changes.log"
     ```
 
-2.  **Run a diff script automatically:**
+2. **Run a diff script automatically:**
 
     ```bash
     uv run monitor.py --exec-on-change "./my_diff_script.sh {prev_hash} {hash}"
     ```
+
     This will execute `my_diff_script.sh` with the old and new hashes as arguments, allowing you to automate comparisons.
 
-3.  **Using `diff.py` to log changes:**
+3. **Using `diff.py` to log changes:**
+
     ```bash
     uv run monitor.py --exec-on-change "uv run diff.py {prev_hash} {hash} --json >> changes.jsonl"
     ```
+
     This command will automatically run the `diff.py` script and append the JSON output to a log file.
 
 ### Comparing Snapshots with `diff.py`
