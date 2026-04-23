@@ -34,7 +34,8 @@ The script operates in a simple, robust cycle:
 
 ### Prerequisites
 
-- Python 3.10 or higher
+- Python 3.13 or higher
+- UV
 
 ### Installation & Setup
 
@@ -48,7 +49,7 @@ The script operates in a simple, robust cycle:
 2. **Install dependencies:**
 
     ```bash
-    pip3 install -r requirements.txt
+    uv sync
     ```
 
 ### Usage
@@ -57,7 +58,7 @@ The primary entry point is `monitor.py`.
 It is meant to run periodically in the background and it is recomended to run this with a `cron` task every 5 minutes.
 
 ```bash
-python3 monitor.py
+uv run monitor.py
 ```
 
 ### Executing a Script on Change Detection
@@ -100,7 +101,7 @@ Once you have run `monitor.py` and have multiple snapshots in the `cache/` direc
    To see which snapshots are available for comparison, you can run `diff.py` with the `-h` or `--help` flag. This will list all the hashes of the snapshots found in the `cache/` directory, along with the timestamp of when they were created.
 
    ```bash
-   python3 diff.py -h
+   uv run diff.py -h
    ```
 
 2. **Run the diff:**
@@ -108,13 +109,13 @@ Once you have run `monitor.py` and have multiple snapshots in the `cache/` direc
    To compare two snapshots, provide their hashes as arguments. The first hash should be the older state and the second hash should be the newer state.
 
    ```bash
-   python3 diff.py <hash1> <hash2>
+   uv run diff.py <hash1> <hash2>
    ```
 
    For example:
 
    ```bash
-   python3 diff.py fa4123d0d9f0988df103ef02b78fb0d09f1279be8597831ba5787828d55bc14a 5e8f3c7f9b8d2e1a4c6b8a0d9e8f7c6a5b4d3e2f1a0c9b8d7e6f5a4b3c2d1e0f
+   uv run diff.py fa4123d0d9f0988df103ef02b78fb0d09f1279be8597831ba5787828d55bc14a 5e8f3c7f9b8d2e1a4c6b8a0d9e8f7c6a5b4d3e2f1a0c9b8d7e6f5a4b3c2d1e0f
    ```
 
 3. **JSON Output:**
@@ -122,5 +123,5 @@ Once you have run `monitor.py` and have multiple snapshots in the `cache/` direc
    For programmatic use, you can get the output in JSON format using the `--json` flag.
 
    ```bash
-   python3 diff.py <hash1> <hash2> --json
+   uv run diff.py <hash1> <hash2> --json
    ```
