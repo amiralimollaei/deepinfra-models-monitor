@@ -34,7 +34,7 @@ def find_cache_files() -> List[str]:
     return [p.stem.split('_')[1] for p in CACHE_DIR.glob("models_*.json")]
 
 
-def format_pricing(type: DeepinfraModelPricingType, value: float) -> str:
+def format_pricing(type: DeepinfraModelPricingType, value: float | None) -> str:
     """Formats a pricing value based on its type."""
 
     unit = None
@@ -57,21 +57,21 @@ def format_pricing(type: DeepinfraModelPricingType, value: float) -> str:
     return f"${value/100:.5f} per {unit}"
 
 
-def format_timestamp(value: float) -> str:
+def format_timestamp(value: float | None) -> str:
     """Formats a timestamp value to a human-readable string."""
     if value is None:
         return "N/A"
     return time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(value))
 
 
-def format_quantization(value: str) -> str:
+def format_quantization(value: str | None) -> str:
     """Formats a quantization value."""
     if value is None:
         return "None"
     return value
 
 
-def format_multiplier(value: float) -> str:
+def format_multiplier(value: float | None) -> str:
     """Formats a multiplier (percentage) value."""
     if value is None:
         return "N/A"
@@ -136,7 +136,7 @@ def parse_args():
     ) for _hash in available_hashes]
 
     available_hashes_str_list = []
-    for _hash, hash_timestamp in sorted(zip(available_hashes, available_hashes_timestamps), key=lambda x: x[1]):
+    for _hash, hash_timestamp in sorted(zip(available_hashes, available_hashes_timestamps), key=lambda x: x[1] or -1):
         available_hash_str = f"{_hash}"
         if hash_timestamp:
             available_hash_str += " - " + time.strftime("%a %b %d %H:%M:%S %Y", time.gmtime(hash_timestamp))
@@ -218,8 +218,12 @@ def main():
         sys.exit(0)
 
     try:
-        models_old_set = load_models_from_file(os.path.join(CACHE_DIR, f"models_{hash1}.json"))
-        models_new_set = load_models_from_file(os.path.join(CACHE_DIR, f"models_{hash2}.json"))
+        models_old_set: set[DeepinfraModelPriced] = load_models_from_file(
+            os.path.join(CACHE_DIR, f"models_{hash1}.json")
+        )  # pyright: ignore[reportAssignmentType]
+        models_new_set: set[DeepinfraModelPriced] = load_models_from_file(
+            os.path.join(CACHE_DIR, f"models_{hash2}.json")
+        )  # pyright: ignore[reportAssignmentType]
     except FileNotFoundError as e:
         error_message = f"Error: {e}. Make sure the hashes are correct and the cache files exist."
         if should_output_json:
@@ -229,8 +233,8 @@ def main():
         sys.exit(1)
 
     # Convert sets to dictionaries keyed by model name for easy lookup
-    models_old: Dict[str, DeepinfraModelPriced] = {m.name: m for m in models_old_set}
-    models_new: Dict[str, DeepinfraModelPriced] = {m.name: m for m in models_new_set}
+    models_old: Dict = {m.name: m for m in models_old_set}
+    models_new: Dict = {m.name: m for m in models_new_set}
 
     # --- --- --- --- ---
 
