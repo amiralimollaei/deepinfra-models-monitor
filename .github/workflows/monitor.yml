@@ -2,8 +2,8 @@ name: Periodic Monitoring
 
 on:
   schedule:
-    # This runs every 30 minutes
-    - cron: '*/30 * * * *'
+    # This runs every hour
+    - cron: '0 * * * *'
   # This allows you to run the workflow manually from the Actions tab for testing
   workflow_dispatch:
 
