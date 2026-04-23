@@ -76,19 +76,19 @@ Use the `--exec-on-change` argument to specify the command to run. You can use t
 1.  **Log new snapshots:**
 
     ```bash
-    python3 monitor.py --exec-on-change "echo 'New model snapshot created: {hash}' >> changes.log"
+    uv run monitor.py --exec-on-change "echo 'New model snapshot created: {hash}' >> changes.log"
     ```
 
 2.  **Run a diff script automatically:**
 
     ```bash
-    python3 monitor.py --exec-on-change "./my_diff_script.sh {prev_hash} {hash}"
+    uv run monitor.py --exec-on-change "./my_diff_script.sh {prev_hash} {hash}"
     ```
     This will execute `my_diff_script.sh` with the old and new hashes as arguments, allowing you to automate comparisons.
 
 3.  **Using `diff.py` to log changes:**
     ```bash
-    python3 monitor.py --exec-on-change "python3 diff.py {prev_hash} {hash} --json >> changes.jsonl"
+    uv run monitor.py --exec-on-change "uv run diff.py {prev_hash} {hash} --json >> changes.jsonl"
     ```
     This command will automatically run the `diff.py` script and append the JSON output to a log file.
 
