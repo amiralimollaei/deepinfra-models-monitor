@@ -11,7 +11,7 @@ from typing import List, Dict, Set
 sys.path.append(str(Path(__file__).parent))
 from utils import DeepinfraModelPricingType, load_models_from_file, load_timestamp_from_file, DeepinfraModelPriced
 
-CACHE_DIR = Path(os.path.join(str(Path(__file__).parent), "cache"))
+CACHE_DIR = Path(os.path.join(str(Path(__file__).parent), "monitor", "cache"))
 
 # ANSI color codes for pretty output
 GREEN = "\033[92m"
