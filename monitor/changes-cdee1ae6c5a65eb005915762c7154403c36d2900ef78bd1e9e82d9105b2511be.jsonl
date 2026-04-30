@@ -1,0 +1,5 @@
+{"event": "modified", "model": "PaddlePaddle/PaddleOCR-VL-0.9B", "details": {"deprecated": {"old": null, "new": 1778196244}, "replaced_by": {"old": null, "new": "google/gemma-4-31B-it"}}}
+{"event": "modified", "model": "allenai/Olmo-3.1-32B-Instruct", "details": {"deprecated": {"old": null, "new": 1778195502}, "replaced_by": {"old": null, "new": "google/gemma-4-31B-it"}}}
+{"event": "modified", "model": "allenai/olmOCR-2-7B-1025", "details": {"deprecated": {"old": null, "new": 1778195515}, "replaced_by": {"old": null, "new": "google/gemma-4-31B-it"}}}
+{"event": "modified", "model": "meta-llama/Meta-Llama-3-8B-Instruct", "details": {"deprecated": {"old": null, "new": 1778194653}, "replaced_by": {"old": null, "new": "meta-llama/Llama-4-Scout-17B-16E-Instruct"}}}
+{"event": "modified", "model": "nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL", "details": {"deprecated": {"old": null, "new": 1778196431}, "replaced_by": {"old": null, "new": "nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning"}}}
