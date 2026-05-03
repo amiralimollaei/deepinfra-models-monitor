@@ -1,0 +1,3905 @@
+{
+  "models": [
+    {
+      "name": "Austism/chronos-hermes-13b-v2",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 13.0,
+        "normalized_output_price": 13.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1727971605,
+      "replaced_by": "Gryphe/MythoMax-L2-13b",
+      "quantization": "fp16"
+    },
+    {
+      "name": "BAAI/bge-base-en-v1.5",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 0.5,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "BAAI/bge-en-icl",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 1.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "BAAI/bge-large-en-v1.5",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 1.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "BAAI/bge-m3",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 1.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp32"
+    },
+    {
+      "name": "BAAI/bge-m3-multi",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 1.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Bria/Bria-3.2",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.16,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Bria/Bria-3.2-vector",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.16,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Bria/blur_background",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.16,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Bria/enhance",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.16,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Bria/erase",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.16,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Bria/erase_foreground",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.16,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Bria/expand",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.16,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Bria/fibo",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.16,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Bria/fibo_edit",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.16,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Bria/gen_fill",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.16,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Bria/remove_background",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.07200000000000001,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Bria/replace_background",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.16,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Bria/video_eraser",
+      "pricing": {
+        "type": "output_length",
+        "normalized_input_price": null,
+        "normalized_output_price": 840.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Bria/video_foreground_mask",
+      "pricing": {
+        "type": "output_length",
+        "normalized_input_price": null,
+        "normalized_output_price": 840.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Bria/video_increase_resolution",
+      "pricing": {
+        "type": "output_length",
+        "normalized_input_price": null,
+        "normalized_output_price": 840.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Bria/video_mask_by_key_points",
+      "pricing": {
+        "type": "output_length",
+        "normalized_input_price": null,
+        "normalized_output_price": 840.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Bria/video_mask_by_prompt",
+      "pricing": {
+        "type": "output_length",
+        "normalized_input_price": null,
+        "normalized_output_price": 840.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Bria/video_remove_background",
+      "pricing": {
+        "type": "output_length",
+        "normalized_input_price": null,
+        "normalized_output_price": 840.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "ByteDance/Seed-1.8",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 25.0,
+        "normalized_output_price": 200.0,
+        "rate_per_input_price_cached": 0.2,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "ByteDance/Seed-2.0-code",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 50.0,
+        "normalized_output_price": 300.0,
+        "rate_per_input_price_cached": 0.2,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "ByteDance/Seed-2.0-mini",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 10.0,
+        "normalized_output_price": 40.0,
+        "rate_per_input_price_cached": 0.2,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "ByteDance/Seed-2.0-pro",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 50.0,
+        "normalized_output_price": 300.0,
+        "rate_per_input_price_cached": 0.2,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "ByteDance/Seedance-1.5-Pro",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 120.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "ByteDance/Seedance-2.0",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 430.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "ByteDance/Seedream-4",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.16,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "ByteDance/Seedream-4.5",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.16,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "ClarityAI/creative",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.2,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "ClarityAI/crystal",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.2,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "ClarityAI/flux",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.8,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "CompVis/stable-diffusion-v1-4",
+      "pricing": {
+        "type": "time",
+        "normalized_input_price": null,
+        "normalized_output_price": 0.05,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1727456630,
+      "replaced_by": "stabilityai/sdxl-turbo",
+      "quantization": null
+    },
+    {
+      "name": "Gryphe/MythoMax-L2-13b",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 40.0,
+        "normalized_output_price": 40.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp16"
+    },
+    {
+      "name": "Gryphe/MythoMax-L2-13b-turbo",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 13.0,
+        "normalized_output_price": 13.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1718830497,
+      "replaced_by": "Gryphe/MythoMax-L2-13b",
+      "quantization": "fp8"
+    },
+    {
+      "name": "KoboldAI/LLaMA2-13B-Tiefighter",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 10.0,
+        "normalized_output_price": 10.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1732503296,
+      "replaced_by": "Gryphe/MythoMax-L2-13b",
+      "quantization": "fp16"
+    },
+    {
+      "name": "MiniMaxAI/MiniMax-M2",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 25.400000000000002,
+        "normalized_output_price": 102.0,
+        "rate_per_input_price_cached": 0.5,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1776285489,
+      "replaced_by": "MiniMaxAI/MiniMax-M2.5",
+      "quantization": "fp8"
+    },
+    {
+      "name": "MiniMaxAI/MiniMax-M2.1",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 27.0,
+        "normalized_output_price": 95.0,
+        "rate_per_input_price_cached": 0.10740741,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1776285489,
+      "replaced_by": "MiniMaxAI/MiniMax-M2.5",
+      "quantization": "fp8"
+    },
+    {
+      "name": "MiniMaxAI/MiniMax-M2.5",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 15.0,
+        "normalized_output_price": 115.0,
+        "rate_per_input_price_cached": 0.2,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "NousResearch/Hermes-3-Llama-3.1-405B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 100.0,
+        "normalized_output_price": 100.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "NousResearch/Hermes-3-Llama-3.1-70B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 30.0,
+        "normalized_output_price": 30.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "NovaSky-AI/Sky-T1-32B-Preview",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 12.0,
+        "normalized_output_price": 18.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1753564079,
+      "replaced_by": "Qwen/Qwen3-32B",
+      "quantization": "fp16"
+    },
+    {
+      "name": "PaddlePaddle/PaddleOCR-VL-0.9B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 14.0,
+        "normalized_output_price": 80.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1778196244,
+      "replaced_by": "google/gemma-4-31B-it",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "Phind/Phind-CodeLlama-34B-v2",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 60.0,
+        "normalized_output_price": 60.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1724371088,
+      "replaced_by": "meta-llama/Meta-Llama-3.1-70B-Instruct",
+      "quantization": "fp16"
+    },
+    {
+      "name": "Pixverse/Pixverse-T2V",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.8,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Pixverse/Pixverse-T2V-HD",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 1.6,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "PrunaAI/p-image",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.02,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "PrunaAI/p-image-Edit",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.04,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "PrunaAI/p-video",
+      "pricing": {
+        "type": "output_length",
+        "normalized_input_price": null,
+        "normalized_output_price": 120.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "PrunaAI/p-video-avatar",
+      "pricing": {
+        "type": "output_length",
+        "normalized_input_price": null,
+        "normalized_output_price": 135.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Qwen/QVQ-72B-Preview",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 25.0,
+        "normalized_output_price": 50.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1757621478,
+      "replaced_by": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "Qwen/QwQ-32B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 15.0,
+        "normalized_output_price": 40.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1762384613,
+      "replaced_by": "Qwen/Qwen3-32B",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "Qwen/QwQ-32B-Preview",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 12.0,
+        "normalized_output_price": 18.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1760054312,
+      "replaced_by": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "Qwen/Qwen-Image-Edit",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.1,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Qwen/Qwen-Image-Edit-Max",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.3,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Qwen/Qwen-Image-Max",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.3,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Qwen/Qwen2-72B-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 35.0,
+        "normalized_output_price": 40.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1728579753,
+      "replaced_by": "Qwen/Qwen2.5-72B-Instruct",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "Qwen/Qwen2-7B-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 5.5,
+        "normalized_output_price": 5.5,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1762392581,
+      "replaced_by": "Qwen/Qwen3-14B",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "Qwen/Qwen2.5-72B-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 36.0,
+        "normalized_output_price": 40.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "Qwen/Qwen2.5-7B-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 4.0,
+        "normalized_output_price": 10.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1762392581,
+      "replaced_by": "Qwen/Qwen3-14B",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 6.0,
+        "normalized_output_price": 15.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1757622099,
+      "replaced_by": "Qwen/Qwen3-32B",
+      "quantization": "fp8"
+    },
+    {
+      "name": "Qwen/Qwen2.5-Coder-7B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 2.5,
+        "normalized_output_price": 5.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1762392581,
+      "replaced_by": "Qwen/Qwen3-14B",
+      "quantization": null
+    },
+    {
+      "name": "Qwen/Qwen2.5-VL-32B-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 20.0,
+        "normalized_output_price": 60.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1777080884,
+      "replaced_by": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "Qwen/Qwen3-14B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 12.0,
+        "normalized_output_price": 24.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "Qwen/Qwen3-235B-A22B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 18.0,
+        "normalized_output_price": 54.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1760028990,
+      "replaced_by": "Qwen/Qwen3-235B-A22B-Instruct-2507",
+      "quantization": "fp8"
+    },
+    {
+      "name": "Qwen/Qwen3-235B-A22B-Instruct-2507",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 7.1,
+        "normalized_output_price": 10.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "Qwen/Qwen3-235B-A22B-Thinking-2507",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 23.0,
+        "normalized_output_price": 230.0,
+        "rate_per_input_price_cached": 0.86956522,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "Qwen/Qwen3-30B-A3B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 9.0,
+        "normalized_output_price": 45.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "Qwen/Qwen3-32B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 8.0,
+        "normalized_output_price": 28.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 7.0,
+        "normalized_output_price": 26.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1763168602,
+      "replaced_by": "Qwen/Qwen3-30B-A3B",
+      "quantization": "fp8"
+    },
+    {
+      "name": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 40.0,
+        "normalized_output_price": 160.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1777575819,
+      "replaced_by": "Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo",
+      "quantization": "fp8"
+    },
+    {
+      "name": "Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 30.0,
+        "normalized_output_price": 100.0,
+        "rate_per_input_price_cached": 0.33333333,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp4"
+    },
+    {
+      "name": "Qwen/Qwen3-Embedding-0.6B",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 1.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Qwen/Qwen3-Embedding-0.6B-batch",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 0.5,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Qwen/Qwen3-Embedding-4B",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 2.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Qwen/Qwen3-Embedding-4B-batch",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 1.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Qwen/Qwen3-Embedding-8B",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 1.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Qwen/Qwen3-Embedding-8B-batch",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 4.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Qwen/Qwen3-Max",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 120.0,
+        "normalized_output_price": 600.0,
+        "rate_per_input_price_cached": 0.2,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Qwen/Qwen3-Max-Thinking",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 120.0,
+        "normalized_output_price": 600.0,
+        "rate_per_input_price_cached": 0.2,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Qwen/Qwen3-Next-80B-A3B-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 9.0,
+        "normalized_output_price": 110.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "Qwen/Qwen3-Reranker-0.6B",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 1.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Qwen/Qwen3-Reranker-4B",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 2.5,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Qwen/Qwen3-Reranker-8B",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 5.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Qwen/Qwen3-TTS",
+      "pricing": {
+        "type": "input_character_length",
+        "normalized_input_price": 2000.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Qwen/Qwen3-TTS-VoiceDesign",
+      "pricing": {
+        "type": "input_character_length",
+        "normalized_input_price": 2000.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Qwen/Qwen3-VL-235B-A22B-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 20.0,
+        "normalized_output_price": 88.0,
+        "rate_per_input_price_cached": 0.55,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "Qwen/Qwen3-VL-235B-A22B-Thinking",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 45.0,
+        "normalized_output_price": 349.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1762366993,
+      "replaced_by": "Qwen/Qwen3-VL-235B-A22B-Instruct",
+      "quantization": "fp8"
+    },
+    {
+      "name": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 15.0,
+        "normalized_output_price": 60.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "Qwen/Qwen3-VL-30B-A3B-Thinking",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 29.0,
+        "normalized_output_price": 99.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1762816774,
+      "replaced_by": "Qwen/Qwen3-VL-235B-A22B-Instruct",
+      "quantization": "fp8"
+    },
+    {
+      "name": "Qwen/Qwen3-VL-4B-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 10.0,
+        "normalized_output_price": 60.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1762816774,
+      "replaced_by": "Qwen/Qwen3-VL-235B-A22B-Instruct",
+      "quantization": "fp8"
+    },
+    {
+      "name": "Qwen/Qwen3-VL-4B-Thinking",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 10.0,
+        "normalized_output_price": 100.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1762816775,
+      "replaced_by": "Qwen/Qwen3-VL-235B-A22B-Instruct",
+      "quantization": "fp8"
+    },
+    {
+      "name": "Qwen/Qwen3-VL-8B-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 18.0,
+        "normalized_output_price": 69.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1762816773,
+      "replaced_by": "Qwen/Qwen3-VL-235B-A22B-Instruct",
+      "quantization": "fp8"
+    },
+    {
+      "name": "Qwen/Qwen3-VL-8B-Thinking",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 18.0,
+        "normalized_output_price": 209.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1762816774,
+      "replaced_by": "Qwen/Qwen3-VL-235B-A22B-Instruct",
+      "quantization": "fp8"
+    },
+    {
+      "name": "Qwen/Qwen3.5-0.8B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 1.0,
+        "normalized_output_price": 5.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "Qwen/Qwen3.5-122B-A10B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 29.0,
+        "normalized_output_price": 240.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "Qwen/Qwen3.5-27B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 26.0,
+        "normalized_output_price": 260.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "Qwen/Qwen3.5-2B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 2.0,
+        "normalized_output_price": 10.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "Qwen/Qwen3.5-35B-A3B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 18.0,
+        "normalized_output_price": 100.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "Qwen/Qwen3.5-397B-A17B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 54.0,
+        "normalized_output_price": 340.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "Qwen/Qwen3.5-4B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 3.0,
+        "normalized_output_price": 15.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "Qwen/Qwen3.5-9B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 4.0,
+        "normalized_output_price": 15.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "Qwen/Qwen3.6-27B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 32.0,
+        "normalized_output_price": 320.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "Qwen/Qwen3.6-35B-A3B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 15.0,
+        "normalized_output_price": 95.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "ResembleAI/chatterbox",
+      "pricing": {
+        "type": "input_character_length",
+        "normalized_input_price": 1000.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1773117389,
+      "replaced_by": "ResembleAI/chatterbox-turbo",
+      "quantization": null
+    },
+    {
+      "name": "ResembleAI/chatterbox-multilingual",
+      "pricing": {
+        "type": "input_character_length",
+        "normalized_input_price": 100.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "ResembleAI/chatterbox-turbo",
+      "pricing": {
+        "type": "input_character_length",
+        "normalized_input_price": 100.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Sao10K/L3-70B-Euryale-v2.1",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 70.0,
+        "normalized_output_price": 80.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1743551444,
+      "replaced_by": "Sao10K/L3.1-70B-Euryale-v2.2",
+      "quantization": "fp8"
+    },
+    {
+      "name": "Sao10K/L3-8B-Lunaris-v1",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 3.0,
+        "normalized_output_price": 6.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1743551422,
+      "replaced_by": "Sao10K/L3.1-70B-Euryale-v2.2",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "Sao10K/L3-8B-Lunaris-v1-Turbo",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 4.0,
+        "normalized_output_price": 5.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "Sao10K/L3.1-70B-Euryale-v2.2",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 85.0,
+        "normalized_output_price": 85.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "Sao10K/L3.3-70B-Euryale-v2.3",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 85.0,
+        "normalized_output_price": 85.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1778199080,
+      "replaced_by": "Sao10K/L3.1-70B-Euryale-v2.2",
+      "quantization": "fp8"
+    },
+    {
+      "name": "Wan-AI/Wan2.1-T2V-1.3B",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.4,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1775771321,
+      "replaced_by": "Wan-AI/Wan2.2-T2V-A14B",
+      "quantization": null
+    },
+    {
+      "name": "Wan-AI/Wan2.1-T2V-14B",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 1.6,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1775771311,
+      "replaced_by": "Wan-AI/Wan2.2-T2V-A14B",
+      "quantization": null
+    },
+    {
+      "name": "Wan-AI/Wan2.2-T2V-A14B",
+      "pricing": {
+        "type": "output_length",
+        "normalized_input_price": null,
+        "normalized_output_price": 216.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Wan-AI/Wan2.6-I2V",
+      "pricing": {
+        "type": "output_length",
+        "normalized_input_price": null,
+        "normalized_output_price": 600.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Wan-AI/Wan2.6-Image-Edit",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.12,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Wan-AI/Wan2.6-T2I",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.12,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Wan-AI/Wan2.6-T2V",
+      "pricing": {
+        "type": "output_length",
+        "normalized_input_price": null,
+        "normalized_output_price": 600.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Wan-AI/Wan2.7-I2V",
+      "pricing": {
+        "type": "output_length",
+        "normalized_input_price": null,
+        "normalized_output_price": 600.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Wan-AI/Wan2.7-Image-Edit",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.12,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Wan-AI/Wan2.7-R2V",
+      "pricing": {
+        "type": "output_length",
+        "normalized_input_price": null,
+        "normalized_output_price": 600.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "XpucT/Deliberate",
+      "pricing": {
+        "type": "time",
+        "normalized_input_price": null,
+        "normalized_output_price": 0.05,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1727456654,
+      "replaced_by": "stabilityai/sdxl-turbo",
+      "quantization": null
+    },
+    {
+      "name": "Zyphra/Zonos-v0.1-hybrid",
+      "pricing": {
+        "type": "input_character_length",
+        "normalized_input_price": 700.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "Zyphra/Zonos-v0.1-transformer",
+      "pricing": {
+        "type": "input_character_length",
+        "normalized_input_price": 700.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "allenai/Olmo-3.1-32B-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 20.0,
+        "normalized_output_price": 60.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1778195502,
+      "replaced_by": "google/gemma-4-31B-it",
+      "quantization": null
+    },
+    {
+      "name": "allenai/olmOCR-2",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 14.0,
+        "normalized_output_price": 80.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1761088563,
+      "replaced_by": "allenai/olmOCR-2-7B-1025",
+      "quantization": "fp8"
+    },
+    {
+      "name": "allenai/olmOCR-2-7B-1025",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 9.0,
+        "normalized_output_price": 19.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1778195515,
+      "replaced_by": "google/gemma-4-31B-it",
+      "quantization": "fp8"
+    },
+    {
+      "name": "allenai/olmOCR-7B-0725-FP8",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 27.0,
+        "normalized_output_price": 150.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1761088563,
+      "replaced_by": "allenai/olmOCR-2-7B-1025",
+      "quantization": null
+    },
+    {
+      "name": "allenai/olmOCR-7B-0825",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 14.0,
+        "normalized_output_price": 80.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1761088563,
+      "replaced_by": "allenai/olmOCR-2-7B-1025",
+      "quantization": "fp8"
+    },
+    {
+      "name": "allenai/olmOCR-7B-1025",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 14.0,
+        "normalized_output_price": 80.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1761088563,
+      "replaced_by": "allenai/olmOCR-2-7B-1025",
+      "quantization": "fp8"
+    },
+    {
+      "name": "anthropic/claude-3-7-sonnet-latest",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 330.0,
+        "normalized_output_price": 1650.0,
+        "rate_per_input_price_cached": 0.1,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "anthropic/claude-4-opus",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 1650.0,
+        "normalized_output_price": 8250.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "anthropic/claude-4-sonnet",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 330.0,
+        "normalized_output_price": 1650.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "bigcode/starcoder2-15b-instruct-v0.1",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 15.0,
+        "normalized_output_price": 15.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1724371088,
+      "replaced_by": "meta-llama/Meta-Llama-3.1-70B-Instruct",
+      "quantization": "fp16"
+    },
+    {
+      "name": "black-forest-labs/FLUX-1-Redux-dev",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.048,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "black-forest-labs/FLUX-1-dev",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.036000000000000004,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "black-forest-labs/FLUX-1-schnell",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.05,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "black-forest-labs/FLUX-1.1-pro",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.16,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "black-forest-labs/FLUX-2-dev",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.03571428571428571,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "black-forest-labs/FLUX-2-klein-4b",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.055999999999999994,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "black-forest-labs/FLUX-2-klein-9b",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.06,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "black-forest-labs/FLUX-2-max",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.4,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "black-forest-labs/FLUX-2-pro",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.06,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "black-forest-labs/FLUX-pro",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.2,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "black-forest-labs/FLUX.1-Kontext-dev",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.04,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "bosonai/HiggsAudioV2.5",
+      "pricing": {
+        "type": "input_character_length",
+        "normalized_input_price": 2000.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "canopylabs/orpheus-3b-0.1-ft",
+      "pricing": {
+        "type": "input_character_length",
+        "normalized_input_price": 700.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "cognitivecomputations/dolphin-2.6-mixtral-8x7b",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 24.0,
+        "normalized_output_price": 24.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1728579753,
+      "replaced_by": "Qwen/Qwen2.5-72B-Instruct",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "cognitivecomputations/dolphin-2.9.1-llama-3-70b",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 35.0,
+        "normalized_output_price": 40.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1728579753,
+      "replaced_by": "Qwen/Qwen2.5-72B-Instruct",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "deepinfra/airoboros-70b",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 70.0,
+        "normalized_output_price": 90.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1762392581,
+      "replaced_by": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+      "quantization": "fp16"
+    },
+    {
+      "name": "deepseek-ai/DeepSeek-OCR",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 3.0,
+        "normalized_output_price": 10.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1777582855,
+      "replaced_by": null,
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "deepseek-ai/DeepSeek-Prover-V2-671B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 50.0,
+        "normalized_output_price": 218.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1752642068,
+      "replaced_by": "deepseek-ai/DeepSeek-V3-0324",
+      "quantization": "fp8"
+    },
+    {
+      "name": "deepseek-ai/DeepSeek-R1",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 70.0,
+        "normalized_output_price": 240.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1765492249,
+      "replaced_by": "deepseek-ai/DeepSeek-R1-0528",
+      "quantization": "fp4"
+    },
+    {
+      "name": "deepseek-ai/DeepSeek-R1-0528",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 50.0,
+        "normalized_output_price": 215.0,
+        "rate_per_input_price_cached": 0.7,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp4"
+    },
+    {
+      "name": "deepseek-ai/DeepSeek-R1-0528-Turbo",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 100.0,
+        "normalized_output_price": 300.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp4"
+    },
+    {
+      "name": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 70.0,
+        "normalized_output_price": 80.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 27.0,
+        "normalized_output_price": 27.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1760054312,
+      "replaced_by": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+      "quantization": "fp8"
+    },
+    {
+      "name": "deepseek-ai/DeepSeek-R1-Turbo",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 100.0,
+        "normalized_output_price": 300.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1765492249,
+      "replaced_by": "deepseek-ai/DeepSeek-R1-0528",
+      "quantization": "fp4"
+    },
+    {
+      "name": "deepseek-ai/DeepSeek-V3",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 32.0,
+        "normalized_output_price": 89.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp4"
+    },
+    {
+      "name": "deepseek-ai/DeepSeek-V3-0324",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 20.0,
+        "normalized_output_price": 77.0,
+        "rate_per_input_price_cached": 0.675,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp4"
+    },
+    {
+      "name": "deepseek-ai/DeepSeek-V3-0324-Turbo",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 100.0,
+        "normalized_output_price": 300.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1756857096,
+      "replaced_by": "deepseek-ai/DeepSeek-V3-0324",
+      "quantization": "fp4"
+    },
+    {
+      "name": "deepseek-ai/DeepSeek-V3.1",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 21.0,
+        "normalized_output_price": 79.0,
+        "rate_per_input_price_cached": 0.61904762,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp4"
+    },
+    {
+      "name": "deepseek-ai/DeepSeek-V3.1-Terminus",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 27.0,
+        "normalized_output_price": 95.0,
+        "rate_per_input_price_cached": 0.48148148,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp4"
+    },
+    {
+      "name": "deepseek-ai/DeepSeek-V3.2",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 26.0,
+        "normalized_output_price": 38.0,
+        "rate_per_input_price_cached": 0.5,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp4"
+    },
+    {
+      "name": "deepseek-ai/DeepSeek-V3.2-Exp",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 21.0,
+        "normalized_output_price": 32.0,
+        "rate_per_input_price_cached": 0.8,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1765415912,
+      "replaced_by": "deepseek-ai/DeepSeek-V3.2",
+      "quantization": "fp4"
+    },
+    {
+      "name": "deepseek-ai/DeepSeek-V4-Flash",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 14.0,
+        "normalized_output_price": 28.0,
+        "rate_per_input_price_cached": 0.2,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp4"
+    },
+    {
+      "name": "deepseek-ai/DeepSeek-V4-Pro",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 174.0,
+        "normalized_output_price": 348.0,
+        "rate_per_input_price_cached": 0.08333333,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp4"
+    },
+    {
+      "name": "deepseek-ai/Janus-Pro-1B",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.002,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "deepseek-ai/Janus-Pro-7B",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.008,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "google/codegemma-7b-it",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 7.0,
+        "normalized_output_price": 7.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1743551605,
+      "replaced_by": "google/gemma-3-12b-it",
+      "quantization": "fp16"
+    },
+    {
+      "name": "google/embeddinggemma-300m",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 0.19999999999999998,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "google/gemini-1.5-flash",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 7.5,
+        "normalized_output_price": 30.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1749069072,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "google/gemini-1.5-flash-8b",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 3.75,
+        "normalized_output_price": 15.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1749069072,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "google/gemini-2.0-flash-001",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 10.0,
+        "normalized_output_price": 40.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1770336000,
+      "replaced_by": "google/gemini-2.5-flash",
+      "quantization": null
+    },
+    {
+      "name": "google/gemini-2.5-flash",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 30.0,
+        "normalized_output_price": 250.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "google/gemini-2.5-pro",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 125.0,
+        "normalized_output_price": 1000.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "google/gemma-1.1-7b-it",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 7.0,
+        "normalized_output_price": 7.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1743551605,
+      "replaced_by": "google/gemma-3-12b-it",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "google/gemma-2-27b-it",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 27.0,
+        "normalized_output_price": 27.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1743551250,
+      "replaced_by": "google/gemma-3-27b-it",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "google/gemma-2-9b-it",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 3.0,
+        "normalized_output_price": 6.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1743551605,
+      "replaced_by": "google/gemma-3-12b-it",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "google/gemma-3-12b-it",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 4.0,
+        "normalized_output_price": 13.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "google/gemma-3-27b-it",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 8.0,
+        "normalized_output_price": 16.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "google/gemma-3-4b-it",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 4.0,
+        "normalized_output_price": 8.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "google/gemma-4-26B-A4B-it",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 7.0,
+        "normalized_output_price": 34.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "google/gemma-4-31B-it",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 13.0,
+        "normalized_output_price": 38.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "google/veo-3.0",
+      "pricing": {
+        "type": "output_length",
+        "normalized_input_price": null,
+        "normalized_output_price": 2400.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "google/veo-3.0-fast",
+      "pricing": {
+        "type": "output_length",
+        "normalized_input_price": null,
+        "normalized_output_price": 900.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "google/veo-3.1",
+      "pricing": {
+        "type": "output_length",
+        "normalized_input_price": null,
+        "normalized_output_price": 2400.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "google/veo-3.1-fast",
+      "pricing": {
+        "type": "output_length",
+        "normalized_input_price": null,
+        "normalized_output_price": 900.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "hexgrad/Kokoro-82M",
+      "pricing": {
+        "type": "input_character_length",
+        "normalized_input_price": 62.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "intfloat/e5-base-v2",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 0.5,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "intfloat/e5-large-v2",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 1.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "intfloat/multilingual-e5-large",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 1.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp32"
+    },
+    {
+      "name": "intfloat/multilingual-e5-large-instruct",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 1.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "inworld-ai/inworld-tts-1.5-max",
+      "pricing": {
+        "type": "input_character_length",
+        "normalized_input_price": 5000.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "inworld-ai/inworld-tts-1.5-mini",
+      "pricing": {
+        "type": "input_character_length",
+        "normalized_input_price": 2500.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "lizpreciatior/lzlv_70b_fp16_hf",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 35.0,
+        "normalized_output_price": 40.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1762392581,
+      "replaced_by": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+      "quantization": "fp16"
+    },
+    {
+      "name": "mattshumer/Reflection-Llama-3.1-70B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 35.0,
+        "normalized_output_price": 40.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1726522168,
+      "replaced_by": "meta-llama/Meta-Llama-3.1-70B-Instruct",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "meta-llama/Llama-2-13b-chat-hf",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 13.0,
+        "normalized_output_price": 13.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1718228019,
+      "replaced_by": "meta-llama/Meta-Llama-3-8B-Instruct",
+      "quantization": "fp16"
+    },
+    {
+      "name": "meta-llama/Llama-2-70b-chat-hf",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 64.0,
+        "normalized_output_price": 80.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1757621725,
+      "replaced_by": "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
+      "quantization": "fp16"
+    },
+    {
+      "name": "meta-llama/Llama-3.2-11B-Vision-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 24.5,
+        "normalized_output_price": 24.5,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "meta-llama/Llama-3.2-1B-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 0.5,
+        "normalized_output_price": 1.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1773101029,
+      "replaced_by": "meta-llama/Llama-3.2-11B-Vision-Instruct",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "meta-llama/Llama-3.2-3B-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 2.0,
+        "normalized_output_price": 2.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1773101029,
+      "replaced_by": "meta-llama/Llama-3.2-11B-Vision-Instruct",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "meta-llama/Llama-3.2-90B-Vision-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 35.0,
+        "normalized_output_price": 40.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1757621478,
+      "replaced_by": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "meta-llama/Llama-3.3-70B-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 23.0,
+        "normalized_output_price": 40.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1762392581,
+      "replaced_by": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 10.0,
+        "normalized_output_price": 32.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 15.0,
+        "normalized_output_price": 60.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-Turbo",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 50.0,
+        "normalized_output_price": 50.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1757628268,
+      "replaced_by": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "quantization": "fp8"
+    },
+    {
+      "name": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 8.0,
+        "normalized_output_price": 30.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "meta-llama/Llama-Guard-3-8B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 5.5,
+        "normalized_output_price": 5.5,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1762824579,
+      "replaced_by": "meta-llama/Llama-Guard-4-12B",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "meta-llama/Llama-Guard-4-12B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 18.0,
+        "normalized_output_price": 18.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "meta-llama/Meta-Llama-3-70B-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 30.0,
+        "normalized_output_price": 40.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1757621725,
+      "replaced_by": "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "meta-llama/Meta-Llama-3-8B-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 3.0,
+        "normalized_output_price": 4.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1778194653,
+      "replaced_by": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "meta-llama/Meta-Llama-3.1-405B-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 80.0,
+        "normalized_output_price": 80.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1752207171,
+      "replaced_by": "NousResearch/Hermes-3-Llama-3.1-405B",
+      "quantization": "fp8"
+    },
+    {
+      "name": "meta-llama/Meta-Llama-3.1-70B-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 40.0,
+        "normalized_output_price": 40.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 40.0,
+        "normalized_output_price": 40.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 2.0,
+        "normalized_output_price": 5.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 2.0,
+        "normalized_output_price": 3.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "microsoft/Phi-3-medium-4k-instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 14.0,
+        "normalized_output_price": 14.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1726163265,
+      "replaced_by": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "microsoft/Phi-4-multimodal-instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 5.0,
+        "normalized_output_price": 10.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1754935710,
+      "replaced_by": "google/gemma-3-12b-it",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "microsoft/WizardLM-2-7B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 5.5,
+        "normalized_output_price": 5.5,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1736981768,
+      "replaced_by": "microsoft/phi-4",
+      "quantization": "fp16"
+    },
+    {
+      "name": "microsoft/WizardLM-2-8x22B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 48.0,
+        "normalized_output_price": 48.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1771449048,
+      "replaced_by": "deepseek-ai/DeepSeek-V3.2",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "microsoft/phi-4",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 7.0,
+        "normalized_output_price": 14.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "microsoft/phi-4-reasoning-plus",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 7.0,
+        "normalized_output_price": 35.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1754935816,
+      "replaced_by": "microsoft/phi-4",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "mistralai/Devstral-Small-2505",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 6.0,
+        "normalized_output_price": 12.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1757623863,
+      "replaced_by": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "mistralai/Devstral-Small-2507",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 7.0,
+        "normalized_output_price": 28.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1757623863,
+      "replaced_by": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+      "quantization": "fp8"
+    },
+    {
+      "name": "mistralai/Mistral-7B-Instruct-v0.1",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 5.5,
+        "normalized_output_price": 5.5,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1757952363,
+      "replaced_by": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+      "quantization": "fp16"
+    },
+    {
+      "name": "mistralai/Mistral-7B-Instruct-v0.2",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 5.5,
+        "normalized_output_price": 5.5,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1757952363,
+      "replaced_by": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+      "quantization": "fp16"
+    },
+    {
+      "name": "mistralai/Mistral-7B-Instruct-v0.3",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 2.8,
+        "normalized_output_price": 5.4,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1757952363,
+      "replaced_by": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "mistralai/Mistral-Nemo-Instruct-2407",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 2.0,
+        "normalized_output_price": 4.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "mistralai/Mistral-Small-24B-Instruct-2501",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 5.0,
+        "normalized_output_price": 8.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 5.0,
+        "normalized_output_price": 10.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1757621399,
+      "replaced_by": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+      "quantization": "fp8"
+    },
+    {
+      "name": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 7.5,
+        "normalized_output_price": 20.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "mistralai/Mixtral-8x22B-Instruct-v0.1",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 65.0,
+        "normalized_output_price": 65.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1771449048,
+      "replaced_by": "deepseek-ai/DeepSeek-V3.2",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "mistralai/Mixtral-8x7B-Instruct-v0.1",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 54.0,
+        "normalized_output_price": 54.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1778198949,
+      "replaced_by": "mistralai/Mistral-Small-24B-Instruct-2501",
+      "quantization": "fp8"
+    },
+    {
+      "name": "mistralai/Voxtral-Mini-3B-2507",
+      "pricing": {
+        "type": "input_length",
+        "normalized_input_price": 0.10000020000000001,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "bf16"
+    },
+    {
+      "name": "mistralai/Voxtral-Small-24B-2507",
+      "pricing": {
+        "type": "input_length",
+        "normalized_input_price": 0.3,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "bf16"
+    },
+    {
+      "name": "moonshotai/Kimi-K2-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 50.0,
+        "normalized_output_price": 200.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1776286096,
+      "replaced_by": "moonshotai/Kimi-K2.5",
+      "quantization": "mixed: fp8/fp4"
+    },
+    {
+      "name": "moonshotai/Kimi-K2-Instruct-0905",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 40.0,
+        "normalized_output_price": 200.0,
+        "rate_per_input_price_cached": 0.375,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1776286096,
+      "replaced_by": "moonshotai/Kimi-K2.5",
+      "quantization": "fp4"
+    },
+    {
+      "name": "moonshotai/Kimi-K2-Thinking",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 47.0,
+        "normalized_output_price": 200.0,
+        "rate_per_input_price_cached": 0.3,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1776286098,
+      "replaced_by": "moonshotai/Kimi-K2.5",
+      "quantization": "fp4"
+    },
+    {
+      "name": "moonshotai/Kimi-K2.5",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 45.0,
+        "normalized_output_price": 225.0,
+        "rate_per_input_price_cached": 0.15555556,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp4"
+    },
+    {
+      "name": "moonshotai/Kimi-K2.5-Turbo",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 60.0,
+        "normalized_output_price": 300.0,
+        "rate_per_input_price_cached": 0.16666667,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1776285488,
+      "replaced_by": "moonshotai/Kimi-K2.5",
+      "quantization": null
+    },
+    {
+      "name": "moonshotai/Kimi-K2.6",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 75.0,
+        "normalized_output_price": 350.0,
+        "rate_per_input_price_cached": 0.2,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp4"
+    },
+    {
+      "name": "nvidia/Llama-3.1-Nemotron-70B-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 120.0,
+        "normalized_output_price": 120.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1778199583,
+      "replaced_by": "nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning",
+      "quantization": "fp8"
+    },
+    {
+      "name": "nvidia/Llama-3.3-Nemotron-Super-49B-v1.5",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 10.0,
+        "normalized_output_price": 40.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 10.0,
+        "normalized_output_price": 50.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 20.0,
+        "normalized_output_price": 60.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1778196431,
+      "replaced_by": "nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning",
+      "quantization": "fp8"
+    },
+    {
+      "name": "nvidia/NVIDIA-Nemotron-Nano-9B-v2",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 4.0,
+        "normalized_output_price": 16.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "nvidia/Nemotron-3-Nano-30B-A3B",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 5.0,
+        "normalized_output_price": 20.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp4"
+    },
+    {
+      "name": "nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 20.0,
+        "normalized_output_price": 80.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "nvidia/Nemotron-4-340B-Instruct",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 420.0,
+        "normalized_output_price": 420.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1752207171,
+      "replaced_by": "NousResearch/Hermes-3-Llama-3.1-405B",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "nvidia/llama-nemotron-embed-vl-1b-v2",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 1.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "nvidia/llama-nemotron-rerank-vl-1b-v2",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 1.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "bf16"
+    },
+    {
+      "name": "openai/clip-vit-base-patch32",
+      "pricing": {
+        "type": "time",
+        "normalized_input_price": null,
+        "normalized_output_price": 0.05,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "openai/clip-vit-large-patch14-336",
+      "pricing": {
+        "type": "time",
+        "normalized_input_price": null,
+        "normalized_output_price": 0.05,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "openai/gpt-oss-120b",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 3.9,
+        "normalized_output_price": 19.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "openai/gpt-oss-120b-Turbo",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 15.0,
+        "normalized_output_price": 60.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "openai/gpt-oss-20b",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 3.0,
+        "normalized_output_price": 14.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "openai/whisper-base",
+      "pricing": {
+        "type": "time",
+        "normalized_input_price": null,
+        "normalized_output_price": 0.05,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1722034220,
+      "replaced_by": "openai/whisper-large-v3",
+      "quantization": null
+    },
+    {
+      "name": "openai/whisper-base.en",
+      "pricing": {
+        "type": "time",
+        "normalized_input_price": null,
+        "normalized_output_price": 0.05,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1722034223,
+      "replaced_by": "openai/whisper-large-v3",
+      "quantization": null
+    },
+    {
+      "name": "openai/whisper-large-v3",
+      "pricing": {
+        "type": "input_length",
+        "normalized_input_price": 0.045,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "openai/whisper-large-v3-turbo",
+      "pricing": {
+        "type": "input_length",
+        "normalized_input_price": 0.01998,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "openai/whisper-medium.en",
+      "pricing": {
+        "type": "time",
+        "normalized_input_price": null,
+        "normalized_output_price": 0.05,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1722034223,
+      "replaced_by": "openai/whisper-large-v3",
+      "quantization": null
+    },
+    {
+      "name": "openai/whisper-small.en",
+      "pricing": {
+        "type": "time",
+        "normalized_input_price": null,
+        "normalized_output_price": 0.05,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1722034191,
+      "replaced_by": "openai/whisper-large-v3",
+      "quantization": null
+    },
+    {
+      "name": "openai/whisper-timestamped-medium",
+      "pricing": {
+        "type": "time",
+        "normalized_input_price": null,
+        "normalized_output_price": 0.05,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1722034220,
+      "replaced_by": "openai/whisper-large-v3",
+      "quantization": null
+    },
+    {
+      "name": "openai/whisper-timestamped-medium.en",
+      "pricing": {
+        "type": "time",
+        "normalized_input_price": null,
+        "normalized_output_price": 0.05,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1722034218,
+      "replaced_by": "openai/whisper-large-v3",
+      "quantization": null
+    },
+    {
+      "name": "openai/whisper-tiny.en",
+      "pricing": {
+        "type": "time",
+        "normalized_input_price": null,
+        "normalized_output_price": 0.05,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1722034221,
+      "replaced_by": "openai/whisper-large-v3",
+      "quantization": null
+    },
+    {
+      "name": "openbmb/MiniCPM-Llama3-V-2_5",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 34.0,
+        "normalized_output_price": 34.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1728579689,
+      "replaced_by": "meta-llama/Llama-3.2-11B-Vision-Instruct",
+      "quantization": null
+    },
+    {
+      "name": "openchat/openchat-3.6-8b",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 5.5,
+        "normalized_output_price": 5.5,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1725662285,
+      "replaced_by": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "openchat/openchat_3.5",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 5.5,
+        "normalized_output_price": 5.5,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1743551004,
+      "replaced_by": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+      "quantization": "fp16"
+    },
+    {
+      "name": "run-diffusion/Juggernaut-Flux",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.036000000000000004,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1751283332,
+      "replaced_by": "black-forest-labs/FLUX-1-dev",
+      "quantization": null
+    },
+    {
+      "name": "run-diffusion/Juggernaut-Lightning-Flux",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.036000000000000004,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1751283332,
+      "replaced_by": "black-forest-labs/FLUX-1-schnell",
+      "quantization": null
+    },
+    {
+      "name": "runwayml/stable-diffusion-v1-5",
+      "pricing": {
+        "type": "time",
+        "normalized_input_price": null,
+        "normalized_output_price": 0.05,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1727456682,
+      "replaced_by": "stabilityai/sdxl-turbo",
+      "quantization": null
+    },
+    {
+      "name": "sentence-transformers/all-MiniLM-L12-v2",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 0.5,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "sentence-transformers/all-MiniLM-L6-v2",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 0.5,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "sentence-transformers/all-mpnet-base-v2",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 0.5,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "sentence-transformers/clip-ViT-B-32",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 0.5,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "sentence-transformers/clip-ViT-B-32-multilingual-v1",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 0.5,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "sentence-transformers/multi-qa-mpnet-base-dot-v1",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 0.5,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "sentence-transformers/paraphrase-MiniLM-L6-v2",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 0.5,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "sesame/csm-1b",
+      "pricing": {
+        "type": "input_character_length",
+        "normalized_input_price": 700.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "shibing624/text2vec-base-chinese",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 0.5,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "stabilityai/sd3.5",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.24,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1761252480,
+      "replaced_by": "stabilityai/sdxl-turbo",
+      "quantization": null
+    },
+    {
+      "name": "stabilityai/sd3.5-medium",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.12,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1761252487,
+      "replaced_by": "stabilityai/sdxl-turbo",
+      "quantization": "bf16"
+    },
+    {
+      "name": "stabilityai/sdxl-turbo",
+      "pricing": {
+        "type": "image_units",
+        "normalized_input_price": 0.004,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "stabilityai/stable-diffusion-2-1",
+      "pricing": {
+        "type": "time",
+        "normalized_input_price": null,
+        "normalized_output_price": 0.05,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1727456832,
+      "replaced_by": "stabilityai/sdxl-turbo",
+      "quantization": null
+    },
+    {
+      "name": "stepfun-ai/Step-3.5-Flash",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 10.0,
+        "normalized_output_price": 30.0,
+        "rate_per_input_price_cached": 0.2,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp8"
+    },
+    {
+      "name": "thenlper/gte-base",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 0.5,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "thenlper/gte-large",
+      "pricing": {
+        "type": "input_tokens",
+        "normalized_input_price": 1.0,
+        "normalized_output_price": null,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": null
+    },
+    {
+      "name": "zai-org/GLM-4.5",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 38.0,
+        "normalized_output_price": 160.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1761350192,
+      "replaced_by": "zai-org/GLM-4.6",
+      "quantization": "fp8"
+    },
+    {
+      "name": "zai-org/GLM-4.5-Air",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 20.0,
+        "normalized_output_price": 110.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1759872821,
+      "replaced_by": "openai/gpt-oss-20b",
+      "quantization": "fp8"
+    },
+    {
+      "name": "zai-org/GLM-4.6",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 43.0,
+        "normalized_output_price": 174.0,
+        "rate_per_input_price_cached": 0.18604651,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp4"
+    },
+    {
+      "name": "zai-org/GLM-4.6V",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 30.0,
+        "normalized_output_price": 90.0,
+        "rate_per_input_price_cached": null,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": 1777582426,
+      "replaced_by": "google/gemma-4-26B-A4B-it",
+      "quantization": "fp8"
+    },
+    {
+      "name": "zai-org/GLM-4.7",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 40.0,
+        "normalized_output_price": 175.0,
+        "rate_per_input_price_cached": 0.2,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp4"
+    },
+    {
+      "name": "zai-org/GLM-4.7-Flash",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 6.0,
+        "normalized_output_price": 40.0,
+        "rate_per_input_price_cached": 0.16666667,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "bfloat16"
+    },
+    {
+      "name": "zai-org/GLM-5",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 60.0,
+        "normalized_output_price": 208.0,
+        "rate_per_input_price_cached": 0.2,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp4"
+    },
+    {
+      "name": "zai-org/GLM-5.1",
+      "pricing": {
+        "type": "tokens",
+        "normalized_input_price": 105.0,
+        "normalized_output_price": 350.0,
+        "rate_per_input_price_cached": 0.1952381,
+        "rate_per_input_price_cache_write": null
+      },
+      "deprecated": null,
+      "replaced_by": null,
+      "quantization": "fp4"
+    }
+  ],
+  "timestamp": 1777812778.924989
+}
