@@ -1,0 +1,14 @@
+{"event": "modified", "model": "PaddlePaddle/PaddleOCR-VL-0.9B", "details": {"deprecated": {"old": 1778196244, "new": 1778120344}}}
+{"event": "modified", "model": "Sao10K/L3.3-70B-Euryale-v2.3", "details": {"deprecated": {"old": 1778199080, "new": 1778120411}}}
+{"event": "modified", "model": "allenai/Olmo-3.1-32B-Instruct", "details": {"deprecated": {"old": 1778195502, "new": 1778120303}}}
+{"event": "modified", "model": "allenai/olmOCR-2", "details": {"deprecated": {"old": 1761088563, "new": 1778120282}, "replaced_by": {"old": "allenai/olmOCR-2-7B-1025", "new": "google/gemma-4-31B-it"}}}
+{"event": "modified", "model": "allenai/olmOCR-2-7B-1025", "details": {"deprecated": {"old": 1778195515, "new": 1778120282}}}
+{"event": "modified", "model": "allenai/olmOCR-7B-0725-FP8", "details": {"deprecated": {"old": 1761088563, "new": 1778120282}, "replaced_by": {"old": "allenai/olmOCR-2-7B-1025", "new": "google/gemma-4-31B-it"}}}
+{"event": "modified", "model": "allenai/olmOCR-7B-0825", "details": {"deprecated": {"old": 1761088563, "new": 1778120282}, "replaced_by": {"old": "allenai/olmOCR-2-7B-1025", "new": "google/gemma-4-31B-it"}}}
+{"event": "modified", "model": "allenai/olmOCR-7B-1025", "details": {"deprecated": {"old": 1761088563, "new": 1778120282}, "replaced_by": {"old": "allenai/olmOCR-2-7B-1025", "new": "google/gemma-4-31B-it"}}}
+{"event": "modified", "model": "deepseek-ai/DeepSeek-OCR", "details": {"deprecated": {"old": 1777582855, "new": 1778122492}, "replaced_by": {"old": null, "new": "google/gemma-4-31B-it"}}}
+{"event": "modified", "model": "meta-llama/Llama-2-13b-chat-hf", "details": {"deprecated": {"old": 1718228019, "new": 1778120368}, "replaced_by": {"old": "meta-llama/Meta-Llama-3-8B-Instruct", "new": "meta-llama/Llama-4-Scout-17B-16E-Instruct"}}}
+{"event": "modified", "model": "meta-llama/Meta-Llama-3-8B-Instruct", "details": {"deprecated": {"old": 1778194653, "new": 1778120368}}}
+{"event": "modified", "model": "mistralai/Mixtral-8x7B-Instruct-v0.1", "details": {"deprecated": {"old": 1778198949, "new": 1778120390}}}
+{"event": "modified", "model": "nvidia/Llama-3.1-Nemotron-70B-Instruct", "details": {"deprecated": {"old": 1778199583, "new": 1778120245}}}
+{"event": "modified", "model": "nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL", "details": {"deprecated": {"old": 1778196431, "new": 1778120330}}}
